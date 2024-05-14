@@ -5,6 +5,9 @@
         <h1 class="title">BeautifyMe</h1>        
       </div>
     </div>
+    <body>
+      <h1>HELLO</h1>
+    </body>
   </template>
   
   <script>
