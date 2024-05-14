@@ -20,11 +20,15 @@ const routes = [
     name: 'Login',
     component: Login
   },
+  {    path: '/services',
+    name: 'Services',
+    component: Login
+  },
   {  
-    path: '/home',
-  name: 'Home',
-  component: Home
-}
+       path: '/home',
+    name: 'Home',
+    component: Home
+  } 
 ];
 
 
