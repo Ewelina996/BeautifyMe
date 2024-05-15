@@ -6,7 +6,6 @@
       <p>
         <button @click="$router.push('/login')">Log in</button>
       </p>
-      or
       <p>
         <button @click="$router.push('/register')">Create an account</button>
       </p>

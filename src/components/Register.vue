@@ -33,26 +33,10 @@
   const email = ref("");
   const password = ref(""); 
 
-  const register = () => {
-    createUserWithEmailAndPassword(getAuth(), email.value, password.value)
-      .then((data) => {
-        console.log("Successfully registered");
-        router.push('/home')
-      })
-      .catch((error) => {
-        console.log(error.code);
-        alert(error.message);
-      });
-  };
-
   export default {
   components: {
     TaskBar
   },
-
-  
-
-
 
   data() {
     return {
@@ -67,14 +51,14 @@
         console.log(`Registering with email ${this.email} and password ${this.password}`);
 
         createUserWithEmailAndPassword(getAuth(), this.email, this.password)
-      .then((data) => {
-        console.log("Successfully registered");
-        router.push('/home')
-      })
-      .catch((error) => {
-        console.log(error.code);
-        alert(error.message);
-      });
+          .then((data) => {
+            console.log("Successfully registered");
+            router.push('/home')
+          })
+          .catch((error) => {
+            console.log(error.code);
+            alert(error.message);
+          });
       }
     }
   }

@@ -20,7 +20,14 @@
   </template>
   
   <script>
+  import { ref } from "vue";
+  import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+  import { useRoute, useRouter } from "vue-router";
   import TaskBar from './TaskBar.vue';
+  import router from "../router";
+
+  const email = ref("");
+  const password = ref("");
   
   export default {
     components: {
@@ -36,6 +43,16 @@
       login() {
         // Tutaj powinna być logika logowania, np. wysłanie danych do serwera
         console.log(`Logging in with email ${this.email} and password ${this.password}`);
+
+        signInWithEmailAndPassword(getAuth(), this.email, this.password)
+        .then((data) => {
+          console.log("Successfully signed in");
+          router.push('/home')
+        })
+        .catch((error) => {
+            console.log(error.code);
+            alert(error.message);
+          });
       }
     }
   }
