@@ -30,17 +30,28 @@
   </template>
   
   <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useRoute, useRouter } from "vue-router";
 import TaskBar from './TaskBar.vue';
+import router from "../router";
 
-  let email = ref('');
-  let password = ref('');
+let email = ref("");
+let password = ref("");
 
-  const login = () => {
-    // Tutaj powinna być logika logowania, np. wysłanie danych do serwera
-    console.log(`Logging in with email ${email} and password ${password}`);
+const login = async () => {
+  console.log(`Logging in with email ${email.value} and password ${password.value}`);
+
+  try {
+    await signInWithEmailAndPassword(getAuth(), email.value, password.value);
+    console.log("Successfully signed in");
+    router.push('/home');
+  } catch (error) {
+    console.log(error.code);
+    alert(error.message);
   }
-  </script>
+};
+</script>
 
 <style scoped>
 #login-page {

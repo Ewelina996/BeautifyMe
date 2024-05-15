@@ -7,8 +7,6 @@ import Book from './components/Book.vue';
 import AboutUs from './components/AboutUs.vue';
 import Services from './components/Services.vue';
 
-
-
 const routes = [
   {
     path: '/',
@@ -45,7 +43,8 @@ const routes = [
     path: '/services',
     name: 'Services',
     component: Services
-  }
+  }, 
+    
 ];
 
 

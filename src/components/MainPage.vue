@@ -26,6 +26,13 @@
     </div>
      <div class="terms-and-privacy">
       <p>By clicking continue, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
+      <h1 class="title">BeautifyMe</h1>
+      <p>
+        <button @click="$router.push('/login')">Log in</button>
+      </p>
+      <p>
+        <button @click="$router.push('/register')">Create an account</button>
+      </p>
     </div>
   </div>
 </template>
