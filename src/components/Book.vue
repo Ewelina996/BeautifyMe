@@ -1,16 +1,28 @@
 <template>
     <div id="book">
       <task-bar></task-bar>
-      <div class="content">
-        <h1 class="title">BeautifyMe</h1>        
+      <div class="content">        
       </div>
     </div>
     <body>
-      <div class="btn-group">
-        <button>Op1</button>
-        <button>Op2</button>
-        <button>Op3</button>
-</div>
+      
+      <!-- <button class="history">My bookings</button><br> -->
+      <div class="form-container">
+        <h1 class="header">OUR SERVICES</h1>
+        <div class="button-container">
+          <button class="history">My bookings</button>
+        </div>
+      </div>
+      <hr/>
+      <div class="book_group">
+        <button>Haircut for short hair</button><br>
+        <button>Haircut for long hair</button><br>
+        <button>Hybrid manicure</button><br>
+        <button>Facial for acne-prone skin</button><br>
+        <button>Facial for dry skin</button><br>
+        <button>Relaxing back massage</button><br>
+        <button>Lashes extenions</button><br>
+      </div>
     </body>
   </template>
   
@@ -55,6 +67,47 @@
     font-size: 20px;
     margin-top: -500px; /* Dodane */
   }
-  
+
+  button {
+    background-color: #F553B4;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 18px;
+  }
+
+  .history {
+    color: white;
+    margin-left: 1050px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+  }
+
+  h1 {
+    color: #000000;
+    font-family: "Josefin Sans";
+    font-size: 40px;
+    margin-top: 100px;
+    text-align: left;
+    margin-left: 80px;
+  }
+
+  hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 3px solid #000000;
+    margin: 1em 0;
+    padding: 0;
+    width:90%;
+    margin-left: 70px;
+  } 
+
+  .form-container { 
+    position: relative;
+    margin-bottom: 10px;
+  }
+
   </style>
   

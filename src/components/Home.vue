@@ -8,11 +8,11 @@
   <body>  
     <h1 class="welcome">Welcome to</h1>
     <h1 class ="bm">BeautifyMe</h1>
-    <a href="/services">
-      <button class="services">See all available services</button><br>
-    </a>
     <a href="/book">
-      <button class="bookings">My bookings</button>
+      <button class="book">See all available services</button><br>
+    </a>
+    <a href="/history">
+      <button class="history">My bookings</button>
     </a>
     
   </body>
@@ -37,6 +37,7 @@ export default {
   height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
 }
 .welcome {
+  font-family: "Josefin Sans";
   text-align: center;
   line-height: 100px;
   font-size: 50px;
@@ -57,7 +58,7 @@ export default {
   margin-top: 60px;
 }
 
-.services {
+.book {
   background-color: #F553B4;
   color: white;
   border: none;
@@ -72,7 +73,7 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.bookings {
+.history {
   background-color: #F553B4;
   color: white;
   border: none;
