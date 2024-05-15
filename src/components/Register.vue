@@ -57,6 +57,7 @@ const register = () => {
   font-family: "Hurricane", cursive;
   font-weight: 400;
   font-size: 6em;
+  color: black;
 }
 
 .content {
@@ -82,7 +83,7 @@ const register = () => {
 
 .content form button {
   width: 100%;
-  background-color: #d869c9; /* Kolor tła przycisku */
+  background-color: #F553B4; /* Kolor tła przycisku */
   color: #fff; /* Kolor tekstu na przycisku */
   border: none;
   border-radius: 4px;
@@ -109,5 +110,8 @@ const register = () => {
   margin-bottom: 10px; /* Dodaje odstęp między polami */
   padding: 10px; /* Dodaje padding dookoła pola */
 }
+
+
+
 
 </style>
