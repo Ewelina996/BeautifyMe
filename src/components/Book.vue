@@ -7,22 +7,60 @@
     <body>
       
       <!-- <button class="history">My bookings</button><br> -->
-      <div class="form-container">
+      <div class="services-container">
         <h1 class="header">OUR SERVICES</h1>
         <div class="button-container">
-          <button class="history">My bookings</button>
+          <a href="/history">
+            <button class="history">My bookings</button>
+          </a>
         </div>
       </div>
+
       <hr/>
-      <div class="book_group">
-        <button>Haircut for short hair</button><br>
-        <button>Haircut for long hair</button><br>
-        <button>Hybrid manicure</button><br>
-        <button>Facial for acne-prone skin</button><br>
-        <button>Facial for dry skin</button><br>
-        <button>Relaxing back massage</button><br>
-        <button>Lashes extenions</button><br>
+
+      <div class="booking-containers">
+
+        <h2 class="ser1">Haircut for short hair</h2>
+        <a href="/history">
+          <button class="button-container1">Book</button>><br>
+        </a>
+
+        <h2 class="ser2">Haircut for long hair</h2>
+        <a href="/history">
+          <button class="button-container2">Book</button>
+        </a>
+
+        <h2 class="ser3">Hybrid manicure</h2>
+        <a href="/history">
+          <button class="button-container3">Book</button>
+        </a>
+
+        <h2 class="ser4">Facial for acne-prone skin</h2>
+        <a href="/history">
+          <button class="button-container4">Book</button>
+        </a>
+
+        <h2 class="ser5">Facial for dry skin</h2>
+        <a href="/history">
+          <button class="button-container5">Book</button>
+        </a>
+
+        <h2 class="ser6">Relaxing back massage</h2>
+        <a href="/history">
+          <button class="button-container5">Book</button>
+        </a>
+
+        <h2 class="ser7">Lashes extenions</h2>
+        <a href="/history">
+          <button class="button-container5">Book</button>
+        </a>
+
+
+
       </div>
+
+
+
     </body>
   </template>
   
@@ -104,9 +142,127 @@
     margin-left: 70px;
   } 
 
-  .form-container { 
+  .services-container { 
     position: relative;
     margin-bottom: 10px;
+  }
+
+  .ser1 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+  }
+
+  .button-container1 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
+  }
+
+  .ser2 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: -25px;
+  }
+
+  .button-container2 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
+  }
+
+  .ser3 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  .button-container3 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
+  }
+
+  .ser4 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  .button-container4 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
+  }
+
+  .ser5 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  .button-container5 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
+  }
+
+  .ser6 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  .button-container6 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
+  }
+
+  .ser7 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  .button-container7 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: 10px;
+    margin-top: -70px;    
   }
 
   </style>

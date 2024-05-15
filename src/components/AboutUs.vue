@@ -11,12 +11,6 @@
       <a href="/book">
         <button class="book">Start your beauty journey now!</button><br>
       </a>
-      <!-- <img src= "./src/assets/images/beautyroutine.jpg" /> -->
-      <!-- <img :src="imageUrl" /> -->
-      <!-- <img :src=require('@/assets/images/beautyroutine.jpg') /> -->
-      <!-- <img :src="require(`../../assets/${beautyroutine.jpg}.svg`)"> -->
-      <!-- <img v-bind:src="require('./assets/${beautyroutine.jpg')" /> -->
-      <img src="./public//beautyroutine.jpg">
     </body>
   </template>
   
@@ -76,29 +70,31 @@
     font-size: 25px;
     color: black;
     font-family: "Josefin Sans";
+    margin-top: 50px;
   }
 
   .third_par {
     font-size: 25px;
     color: black;
     font-family: "Josefin Sans";
+    margin-top: 50px;
   }
 
-  .services {
-  background-color: #F553B4;
-  font-size: 15px;
-  color: white;
-  border: none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 18px;
-  margin: 0;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  width: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+  .book {
+    background-color: #F553B4;
+    font-size: 15px;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 18px;
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 30%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
   
   </style>
   
