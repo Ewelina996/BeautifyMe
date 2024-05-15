@@ -1,5 +1,9 @@
 # BeautifyMe
 
+npm i
+npm i firebase
+npm i vue-router
+
 #### Tytuł aplikacji: BeautifyMe
 Link do projektu interfejsu aplikacji:
 https://www.figma.com/file/QtjEubLqRExxCAqHM0VqQz/BAI-Aplikacja?type=design&node-id=0-1&mode=design&t=ZruZyA6QD3EjMkEO-0
