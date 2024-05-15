@@ -3,7 +3,6 @@ import MainPage from './components/MainPage.vue';
 import Register from './components/Register.vue'; 
 import Login from './components/Login.vue'; 
 import Home from './components/Home.vue';
-import Services from "./components/Services.vue";
 import AboutUs from "./components/AboutUs.vue";
 import Book from "./components/Book.vue";
 
@@ -27,10 +26,6 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home
-  },
-  { path: '/services',
-    name: 'Services',
-    component: Services
   },
   {  
     path: '/about',

@@ -5,6 +5,13 @@
         <h1 class="title">BeautifyMe</h1>        
       </div>
     </div>
+    <body>
+      <div class="btn-group">
+        <button>Op1</button>
+        <button>Op2</button>
+        <button>Op3</button>
+</div>
+    </body>
   </template>
   
   <script>
