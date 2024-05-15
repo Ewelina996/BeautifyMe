@@ -66,6 +66,7 @@ const goToMainPage = () => {
   font-family: "Hurricane", cursive;
   font-weight: 400;
   font-size: 10em;
+  color: black;
 }
 
     .nav-links {
