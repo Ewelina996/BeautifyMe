@@ -14,14 +14,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TaskBar from './TaskBar.vue';
 
-export default {
-  components: {
-    TaskBar
-  },
-};
 </script>
 
 <style scoped>
@@ -48,6 +43,17 @@ export default {
 
 .content {
   margin-top: 60px;
+}
+
+.content button {
+  width: 100%;
+  background-color: #d869c9; /* Kolor tła przycisku */
+  color: #fff; /* Kolor tekstu na przycisku */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .logo h1 {
