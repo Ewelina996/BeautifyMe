@@ -1,50 +1,48 @@
 <template>
   <div id="register-page">
     <h1 class="title">BeautifyMe</h1>
+    <div class="account-info">
+      <h2>Create an account</h2>
+      <p>Enter your email and password to create an account for this app</p>
+    </div>
     <task-bar></task-bar>
     <div class="content">
-      <h2>Register</h2>
       <form @submit.prevent="register">
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" v-model="email">
+        <div class="input-container">
+          <input type="email" id="email" v-model="email" placeholder="email@domain.com">
         </div>
-        <div>
-          <label for="password">Password:</label>
-          <input type="password" id="password" v-model="password">
+        <div class="input-container">
+          <input type="password" id="password" v-model="password" placeholder="password">
         </div>
-        <div>
-          <label for="confirmPassword">Confirm Password:</label>
-          <input type="password" id="confirmPassword" v-model="confirmPassword">
+        <div class="input-container">
+          <input type="password" id="confirmPassword" v-model="confirmPassword" placeholder="confirm_password">
         </div>
-        <button type="submit">Register</button>
+        <button type="submit">Create an account</button>
+        <p>or continue with</p>
+<button class="google-sign-in-button">
+  Google
+</button>
       </form>
     </div>
+     <div class="terms-and-privacy">
+      <p>By clicking continue, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
+    </div>
   </div>
-  </template>
+</template>
   
-  <script>
-  import TaskBar from './TaskBar.vue';
+<script setup>
+import { ref } from 'vue';
+import TaskBar from './TaskBar.vue';
 
-  export default {
-  components: {
-    TaskBar
-  },
-  data() {
-    return {
-      email: '',
-      password: '',
-        confirmPassword: ''
-      }
-    },
-    methods: {
-      register() {
-        // Tutaj powinna być logika rejestracji, np. wysłanie danych do serwera
-        console.log(`Registering with email ${this.email} and password ${this.password}`);
-      }
-    }
-  }
-  </script>
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+
+const register = () => {
+  // Tutaj powinna być logika rejestracji, np. wysłanie danych do serwera
+  console.log(`Registering with email ${email.value} and password ${password.value}`);
+};
+</script>
 
 <style scoped>
 #register-page {
@@ -65,17 +63,51 @@
   width: 100%;
   max-width: 400px; /* Maksymalna szerokość formularza */
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: transparent;
   border-radius: 4px;
-  margin-top: 60px
+  margin-top: 1px
 }
 
 .content form div {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+.content form input {
+  width: 97%; /* Powiększa pola wprowadzania do pełnej szerokości */
+  height: 20px;
+  padding: 10px; /* Dodaje padding dookoła tekstu */
+  border-radius: 4px;
+  border: none;
 }
 
 .content form button {
   width: 100%;
+  background-color: #d869c9; /* Kolor tła przycisku */
+  color: #fff; /* Kolor tekstu na przycisku */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
+
+.google-sign-in-button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-container {
+  background-color: transparent; /* Zmień na kolor tła, który chcesz */
+  margin-bottom: 10px; /* Dodaje odstęp między polami */
+  padding: 10px; /* Dodaje padding dookoła pola */
+}
+
 </style>
