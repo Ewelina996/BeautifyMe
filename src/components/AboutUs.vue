@@ -6,6 +6,7 @@
     </div>
     <body>
       <p class="first_par">BeautifyMe was created in 2024 by a team of acknowledged and experienced aestheticians. Their goal was to create a space available for everyone, ready to help and guide on their adventure of skincare, and more.</p>
+      <img src="./src/assets/beautyroutine.jpg">
       <p class="second_par">Our specialist are ready to help you with whatever skin and hair concern you have. Our skilled stylists will create hair and nails of your dreams. Don’t hesitate and book an appointment with us now!</p>
       <p class="third_par">Our beauty parlor is equipped with the newest tools and skin care, in order to provide our clients with the best care possible. The visits in our parlor are not just visits - they are a whole experience, every single one of them tailored individually to every client. This approach allows our aestheticians to understand and treat every concern of your precious skin!</p>
       <a href="/book">
