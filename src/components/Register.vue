@@ -24,12 +24,20 @@
   </template>
   
   <script>
+  import { ref } from "vue";
+  import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+  import { useRoute, useRouter } from "vue-router";
   import TaskBar from './TaskBar.vue';
+  import router from "../router";
+
+  const email = ref("");
+  const password = ref(""); 
 
   export default {
   components: {
     TaskBar
   },
+
   data() {
     return {
       email: '',
@@ -41,6 +49,16 @@
       register() {
         // Tutaj powinna być logika rejestracji, np. wysłanie danych do serwera
         console.log(`Registering with email ${this.email} and password ${this.password}`);
+
+        createUserWithEmailAndPassword(getAuth(), this.email, this.password)
+          .then((data) => {
+            console.log("Successfully registered");
+            router.push('/home')
+          })
+          .catch((error) => {
+            console.log(error.code);
+            alert(error.message);
+          });
       }
     }
   }

@@ -108,8 +108,13 @@ export default {
     padding: 8px 15px;
     border-radius: 4px;
     border: none;
-    background-color: #007bff;
+    background-color: rgb(212, 74, 132);
     color: white;
     cursor: pointer;
   }
+
+  a {
+    color: black;
+  }
+
   </style>

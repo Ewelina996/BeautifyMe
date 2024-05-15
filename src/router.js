@@ -3,6 +3,9 @@ import MainPage from './components/MainPage.vue';
 import Register from './components/Register.vue'; 
 import Login from './components/Login.vue'; 
 import Home from './components/Home.vue';
+import Services from "./components/Services.vue";
+import AboutUs from "./components/AboutUs.vue";
+import Book from "./components/Book.vue";
 
 
 const routes = [
@@ -16,15 +19,29 @@ const routes = [
     name: 'Register',
     component: Register
   },
-  {    path: '/login',
+  { path: '/login',
     name: 'Login',
     component: Login
   },
   {  
     path: '/home',
-  name: 'Home',
-  component: Home
-}
+    name: 'Home',
+    component: Home
+  },
+  { path: '/services',
+    name: 'Services',
+    component: Services
+  },
+  {  
+    path: '/about',
+    name: 'About Us',
+    component: AboutUs
+  },
+  {  
+    path: '/book',
+    name: 'Book',
+    component: Book
+  } 
 ];
 
 
