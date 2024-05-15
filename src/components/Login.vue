@@ -1,43 +1,44 @@
 <template>
   <div id="login-page">
     <h1 class="title">BeautifyMe</h1>
+    <div class="account-info">
+      <h2>Login to access your account</h2>
+      <p>Enter your email and password to log in</p>
+    </div>
     <task-bar></task-bar>
     <div class="content">
-      <h2>Login</h2>
-      <form @submit.prevent="login">
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" v-model="email">
+      <form @submit.prevent="register">
+        <div class="input-container">
+          <input type="email" id="email" v-model="email" placeholder="email@domain.com">
         </div>
-        <div>
-          <label for="password">Password:</label>
-          <input type="password" id="password" v-model="password">
+        <div class="input-container">
+          <input type="password" id="password" v-model="password" placeholder="password">
         </div>
-        <button type="submit">Login</button>
-      </form>
+        <button type="submit">Log in</button>
+        <p>or continue with</p>
+<button class="google-sign-in-button">
+  Google
+</button>
+<p>or create an account</p>
+      <button type="button">Create an account</button>
+    </form>
+    </div>
+     <div class="terms-and-privacy">
+      <p>By clicking continue, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
     </div>
   </div>
   </template>
   
-  <script>
-  import TaskBar from './TaskBar.vue';
-  
-  export default {
-    components: {
-      TaskBar
-    },
-    data() {
-      return {
-        email: '',
-        password: ''
-      }
-    },
-    methods: {
-      login() {
-        // Tutaj powinna być logika logowania, np. wysłanie danych do serwera
-        console.log(`Logging in with email ${this.email} and password ${this.password}`);
-      }
-    }
+  <script setup>
+import { ref } from 'vue';
+import TaskBar from './TaskBar.vue';
+
+  let email = ref('');
+  let password = ref('');
+
+  const login = () => {
+    // Tutaj powinna być logika logowania, np. wysłanie danych do serwera
+    console.log(`Logging in with email ${email} and password ${password}`);
   }
   </script>
 
@@ -60,17 +61,31 @@
   width: 100%;
   max-width: 400px; /* Maksymalna szerokość formularza */
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: transparent;
   border-radius: 4px;
-  margin-top: 60px
+  margin-top: 1px
 }
 
 .content form div {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.content form input {
+  width: 95%; /* Powiększa pola wprowadzania do pełnej szerokości */
+  height: 20px;
+  padding: 10px; /* Dodaje padding dookoła tekstu */
+  border-radius: 4px; /* Dodaje zaokrąglone rogi */
+  border: none;
 }
 
 .content form button {
   width: 100%;
+  background-color: #d869c9; /* Kolor tła przycisku */
+  color: #fff; /* Kolor tekstu na przycisku */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 </style>
