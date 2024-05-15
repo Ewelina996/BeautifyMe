@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-      <div class="logo">
+      <div class="logo" @click="goToMainPage">
         <h1 class="logo-text title">BeautifyMe</h1>
       </div>
       <div class="nav-links">
@@ -19,25 +19,32 @@
   </header>
 </template>
 
-<script>
-export default {
-  methods: {
-    search() {
-      // Add search functionality here
-      console.log("Searching...");
-    },
-    goToHomePage() {
-      this.$router.push({ path: '/home' });
-    },
-    goToBookPage() {
-      this.$router.push({ path: '/book' }); // Przekierowuje do komponentu Book
-    },
-    goToAboutUsPage() {
-      this.$router.push({ path: '/about' }); // Przekierowuje do komponentu AboutUs
-    }
-    }
-  };
-  </script>
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const search = () => {
+  // Add search functionality here
+  console.log("Searching...");
+};
+
+const goToHomePage = () => {
+  router.push({ path: '/home' });
+};
+
+const goToBookPage = () => {
+  router.push({ path: '/book' }); // Przekierowuje do komponentu Book
+};
+
+const goToAboutUsPage = () => {
+  router.push({ path: '/about' }); // Przekierowuje do komponentu AboutUs
+};
+
+const goToMainPage = () => {
+  router.push({ path: '/' }); // Przekierowuje do komponentu MainPage
+};
+</script>
   
   <style scoped>
   .header {
@@ -63,11 +70,13 @@ export default {
 
     .nav-links {
     margin-left: auto;
+    cursor: pointer;
 }
   
   .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
   }
   
