@@ -4,6 +4,8 @@ import Register from './components/Register.vue';
 import Login from './components/Login.vue'; 
 import Home from './components/Home.vue';
 import Services from "./components/Services.vue";
+import AboutUs from "./components/AboutUs.vue";
+import Book from "./components/Book.vue";
 
 
 const routes = [
@@ -29,6 +31,16 @@ const routes = [
        path: '/home',
     name: 'Home',
     component: Home
+  },
+  {  
+      path: '/about',
+    name: 'About Us',
+    component: AboutUs
+  },
+  {  
+    path: '/book',
+      name: 'Book',
+      component: Book
   } 
 ];
 
