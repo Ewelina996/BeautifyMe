@@ -7,7 +7,7 @@
     </div>
     <task-bar></task-bar>
     <div class="content">
-      <form @submit.prevent="register">
+      <form @submit.prevent="login">
         <div class="input-container">
           <input type="email" id="email" v-model="email" placeholder="email@domain.com">
         </div>
@@ -55,6 +55,7 @@ import TaskBar from './TaskBar.vue';
   font-family: "Hurricane", cursive;
   font-weight: 400;
   font-size: 6em;
+  color: black;
 }
 
 .content {
@@ -80,7 +81,7 @@ import TaskBar from './TaskBar.vue';
 
 .content form button {
   width: 100%;
-  background-color: #d869c9; /* Kolor tła przycisku */
+  background-color: #F553B4; /* Kolor tła przycisku */
   color: #fff; /* Kolor tekstu na przycisku */
   border: none;
   border-radius: 4px;
@@ -88,4 +89,6 @@ import TaskBar from './TaskBar.vue';
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+
+
 </style>
