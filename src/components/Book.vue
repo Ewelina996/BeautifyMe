@@ -1,269 +1,180 @@
 <template>
-    <div id="book">
-      <task-bar></task-bar>
-      <div class="content">        
+  <div id="book">
+    <task-bar></task-bar>
+    <div class="content"></div>
+  </div>
+  <body>
+    <div class="services-container">
+      <h1 class="header">OUR SERVICES</h1>
+      <div class="button-container">
+        <a href="/history">
+          <button class="history">My bookings</button>
+        </a>
       </div>
     </div>
-    <body>
-      
-      <!-- <button class="history">My bookings</button><br> -->
-      <div class="services-container">
-        <h1 class="header">OUR SERVICES</h1>
-        <div class="button-container">
-          <a href="/history">
-            <button class="history">My bookings</button>
-          </a>
-        </div>
+    <hr />
+    <div class="booking-containers">
+      <div class="service-item">
+        <h2 class="service">Haircut for short hair</h2>
+        <a href="/history">
+          <button class="button-container">Book</button>
+        </a>
       </div>
-
-      <hr/>
-
-      <div class="booking-containers">
-
-        <h2 class="ser1">Haircut for short hair</h2>
+      <div class="service-item">
+        <h2 class="service">Haircut for long hair</h2>
         <a href="/history">
-          <button class="button-container1">Book</button>><br>
+          <button class="button-container">Book</button>
         </a>
-
-        <h2 class="ser2">Haircut for long hair</h2>
-        <a href="/history">
-          <button class="button-container2">Book</button>
-        </a>
-
-        <h2 class="ser3">Hybrid manicure</h2>
-        <a href="/history">
-          <button class="button-container3">Book</button>
-        </a>
-
-        <h2 class="ser4">Facial for acne-prone skin</h2>
-        <a href="/history">
-          <button class="button-container4">Book</button>
-        </a>
-
-        <h2 class="ser5">Facial for dry skin</h2>
-        <a href="/history">
-          <button class="button-container5">Book</button>
-        </a>
-
-        <h2 class="ser6">Relaxing back massage</h2>
-        <a href="/history">
-          <button class="button-container5">Book</button>
-        </a>
-
-        <h2 class="ser7">Lashes extenions</h2>
-        <a href="/history">
-          <button class="button-container5">Book</button>
-        </a>
-
-
-
       </div>
+      <div class="service-item">
+        <h2 class="service">Hybrid manicure</h2>
+        <a href="/history">
+          <button class="button-container">Book</button>
+        </a>
+      </div>
+      <div class="service-item">
+        <h2 class="service">Facial for acne-prone skin</h2>
+        <a href="/history">
+          <button class="button-container">Book</button>
+        </a>
+      </div>
+      <div class="service-item">
+        <h2 class="service">Facial for dry skin</h2>
+        <a href="/history">
+          <button class="button-container">Book</button>
+        </a>
+      </div>
+      <div class="service-item">
+        <h2 class="service">Relaxing back massage</h2>
+        <a href="/history">
+          <button class="button-container">Book</button>
+        </a>
+      </div>
+      <div class="service-item">
+        <h2 class="service">Lashes extensions</h2>
+        <a href="/history">
+          <button class="button-container">Book</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</template>
 
+<script>
+import TaskBar from './TaskBar.vue';
 
+export default {
+  components: {
+    TaskBar
+  }
+};
+</script>
 
-    </body>
-  </template>
-  
-  <script>
-  import TaskBar from './TaskBar.vue';
-  
-  export default {
-    components: {
-      TaskBar
-    },
-  };
-  </script>
-  
-  <style scoped>
-  #main-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+<style scoped>
+#main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px);
+}
+
+.title {
+  font-family: "Hurricane", cursive;
+  font-weight: 400;
+  font-size: 6em;
+}
+
+.content {
+  margin-top: 60px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+button {
+  background-color: #F553B4;
+  color: white;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 18px;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e542a3;
+}
+
+.header {
+  color: #000;
+  font-family: "Josefin Sans";
+  font-size: 2em;
+  margin: 20px;
+  text-align: center;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 3px solid #000;
+  margin: 1em 0;
+  padding: 0;
+  width: 90%;
+}
+
+.services-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking-containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.service {
+  color: #000;
+  font-size: 1.5em;
+  font-family: "Josefin Sans";
+}
+
+.button-container {
+  flex-shrink: 0;
+  margin-left: 20px;
+  padding: 10px 20px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    font-size: 2.5em;
   }
-  
-  .title {
-    font-family: "Hurricane", cursive;
-    font-weight: 400;
-    font-size: 6em;
-  }
-  
-  .title.hurricane-regular {
-    font-family: "Hurricane", cursive;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: -500px;
-  }
-  
-  .content {
-    margin-top: 60px;
-  }
-  
-  .logo h1 {
-    margin: 0;
-    font-size: 20px;
-    margin-top: -500px; /* Dodane */
+
+  .service {
+    font-size: 2em;
   }
 
   button {
-    background-color: #F553B4;
-    color: white;
-    border: none;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 18px;
+    font-size: 1.2em;
+    padding: 15px 30px;
   }
 
-  .history {
-    color: white;
-    margin-left: 1050px;
-    position: absolute;
-    top: 0;
-    left: 10px;
+  .service-item {
+    gap: 40px;
   }
-
-  h1 {
-    color: #000000;
-    font-family: "Josefin Sans";
-    font-size: 40px;
-    margin-top: 100px;
-    text-align: left;
-    margin-left: 80px;
-  }
-
-  hr {
-    display: block;
-    height: 2px;
-    border: 0;
-    border-top: 3px solid #000000;
-    margin: 1em 0;
-    padding: 0;
-    width:90%;
-    margin-left: 70px;
-  } 
-
-  .services-container { 
-    position: relative;
-    margin-bottom: 10px;
-  }
-
-  .ser1 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-  }
-
-  .button-container1 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  .ser2 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: -25px;
-  }
-
-  .button-container2 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  .ser3 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: 5px;
-  }
-
-  .button-container3 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  .ser4 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: 5px;
-  }
-
-  .button-container4 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  .ser5 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: 5px;
-  }
-
-  .button-container5 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  .ser6 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: 5px;
-  }
-
-  .button-container6 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  .ser7 {
-    color: #000000;
-    font-size: 30px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: 5px;
-  }
-
-  .button-container7 {
-    color: white;
-    margin-left: 1200px;
-    position: absolute;
-    left: 10px;
-    margin-top: -70px;    
-  }
-
-  </style>
-  
+}
+</style>
