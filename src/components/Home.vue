@@ -1,21 +1,17 @@
 <template>
-  <div id="about-us">
+  <div id="main-page">
     <task-bar></task-bar>
+    <div id="about-us">
+      <h1 class="welcome">Welcome to</h1>
+      <h1 class="bm">BeautifyMe</h1>
+      <a href="/book">
+        <button class="book">Book Now</button>
+      </a>
+      <a href="/history">
+        <button class="history">My bookings</button>
+      </a>
+    </div>
   </div>
-  <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap">
-  </head>
-  <body>  
-    <h1 class="welcome">Welcome to</h1>
-    <h1 class ="bm">BeautifyMe</h1>
-    <a href="/book">
-      <button class="book">See all available services</button><br>
-    </a>
-    <a href="/history">
-      <button class="history">My bookings</button>
-    </a>
-    
-  </body>
 </template>
 
 <script>
@@ -30,62 +26,60 @@ export default {
 
 <style scoped>
 #main-page {
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
-}
-.welcome {
-  font-family: "Josefin Sans";
+  height: calc(100vh - 60px); /* Height minus taskbar height */
+  padding: 20px;
   text-align: center;
-  line-height: 100px;
-  font-size: 50px;
+}
+
+.welcome {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.2;
+  font-size: 8vw; /* Adjusted for responsiveness */
   color: black;
-  width: 400px;
-  margin: auto;
-  margin-top: 70px;
+  margin: 20px 0;
 }
 
 .bm {
-  text-align: center;
-  line-height: 100px;
-  font-family: "Hurricane";
-  font-size: 120px;
+  font-family: "Hurricane", cursive;
+  font-size: 15vw; /* Adjusted for responsiveness */
   color: black;
-  width: 400px;
-  margin: auto;
-  margin-top: 60px;
+  margin: 20px 0;
 }
 
-.book {
+button {
   background-color: #F553B4;
   color: white;
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 18px;
-  margin: 0;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  width: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 4vw; /* Adjusted for responsiveness */
+  width: 80%;
+  max-width: 300px; /* Max width for larger screens */
+  transition: background-color 0.3s;
 }
 
-.history {
-  background-color: #F553B4;
-  color: white;
-  border: none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 18px;
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  width: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+button:hover {
+  background-color: #e542a3;
 }
 
+@media (min-width: 768px) {
+  .welcome {
+    font-size: 4vw;
+  }
+
+  .bm {
+    font-size: 7vw;
+  }
+
+  button {
+    font-size: 2vw;
+    width: 40%;
+  }
+}
 </style>
