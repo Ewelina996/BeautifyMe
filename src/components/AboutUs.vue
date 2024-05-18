@@ -16,8 +16,6 @@
 <script setup>
 import TaskBar from './TaskBar.vue';
 
-// const imageUrl = import("BeautifyMe/src/assets/images/beautyroutine.jpg");
-
 </script>
 
 <style scoped>
