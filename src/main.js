@@ -1,20 +1,19 @@
-<script setup>
-</script>
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+import router from './router'
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
-</template>
+const firebaseConfig = {
+    apiKey: "AIzaSyDP9XYpdCbweOji1W2gJVMCfiUwsJTkWiE",
+    authDomain: "beautifyme-7818b.firebaseapp.com",
+    projectId: "beautifyme-7818b",
+    storageBucket: "beautifyme-7818b.appspot.com",
+    messagingSenderId: "568440136503",
+    appId: "1:568440136503:web:072e87eaec6a16b107f0b2"
+  };
 
-<style scoped>
-#app {
-  background-image: linear-gradient(to bottom, rgb(212, 74, 132), rgb(211, 185, 212));
-  background-attachment: fixed;
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-</style>
+initializeApp(firebaseConfig);
+
+createApp(App).use(router).mount('#app')

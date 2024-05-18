@@ -7,8 +7,8 @@
         <nav>
           <ul>
             <li><a @click.prevent="goToHomePage" class="nav-link">Home</a></li>
-          <li><a @click.prevent="goToBookPage" class="nav-link">Book</a></li>
-          <li><a @click.prevent="goToAboutUsPage" class="nav-link">About Us</a></li>
+            <li><a @click.prevent="goToBookPage" class="nav-link">Book</a></li>
+            <li><a @click.prevent="goToAboutUsPage" class="nav-link">About Us</a></li>
         </ul>
       </nav>
     </div>
@@ -73,6 +73,10 @@ const goToMainPage = () => {
     margin-left: auto;
     cursor: pointer;
 }
+
+.nav-link {
+    color: black;
+  }
   
   .logo {
     display: flex;
@@ -118,8 +122,12 @@ const goToMainPage = () => {
     padding: 8px 15px;
     border-radius: 4px;
     border: none;
-    background-color: #007bff;
+    background-color: rgb(212, 74, 132);
     color: white;
     cursor: pointer;
+  }
+
+  li {
+    color: black;
   }
   </style>

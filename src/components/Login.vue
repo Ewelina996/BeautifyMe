@@ -20,8 +20,10 @@
   Google
 </button>
 <p>or create an account</p>
-      <button type="button">Create an account</button>
     </form>
+    <a href="/register">
+        <button class="register">Create an account</button><br>
+    </a>  
     </div>
      <div class="terms-and-privacy">
       <p>By clicking continue, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
@@ -90,6 +92,17 @@ const login = async () => {
 }
 
 .content form button {
+  width: 100%;
+  background-color: #F553B4; /* Kolor tła przycisku */
+  color: #fff; /* Kolor tekstu na przycisku */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.register {
   width: 100%;
   background-color: #F553B4; /* Kolor tła przycisku */
   color: #fff; /* Kolor tekstu na przycisku */

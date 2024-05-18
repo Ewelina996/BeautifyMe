@@ -1,66 +1,20 @@
 <template>
-  <div id="book">
+  <div id="about-us">
     <task-bar></task-bar>
-    <div class="content">        
-    </div>
   </div>
-  <body>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap">
+  </head>
+  <body>  
+    <h1 class="welcome">Welcome to</h1>
+    <h1 class ="bm">BeautifyMe</h1>
+    <a href="/book">
+      <button class="book">See all available services</button><br>
+    </a>
+    <a href="/history">
+      <button class="history">My bookings</button>
+    </a>
     
-    <!-- <button class="history">My bookings</button><br> -->
-    <div class="services-container">
-      <h1 class="header">OUR SERVICES</h1>
-      <div class="button-container">
-        <a href="/history">
-          <button class="history">My bookings</button>
-        </a>
-      </div>
-    </div>
-
-    <hr/>
-
-    <div class="booking-containers">
-
-      <h2 class="ser1">Haircut for short hair</h2>
-      <a href="/history">
-        <button class="button-container1">Book</button>><br>
-      </a>
-
-      <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/history">
-        <button class="button-container2">Book</button>
-      </a>
-
-      <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/history">
-        <button class="button-container3">Book</button>
-      </a>
-
-      <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/history">
-        <button class="button-container4">Book</button>
-      </a>
-
-      <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/history">
-        <button class="button-container5">Book</button>
-      </a>
-
-      <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/history">
-        <button class="button-container5">Book</button>
-      </a>
-
-      <h2 class="ser7">Lashes extenions</h2>
-      <a href="/history">
-        <button class="button-container5">Book</button>
-      </a>
-
-
-
-    </div>
-
-
-
   </body>
 </template>
 
@@ -70,193 +24,62 @@ import TaskBar from './TaskBar.vue';
 
 <style scoped>
 #main-page {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
 }
-
-.title {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-size: 6em;
+.welcome {
+  font-family: "Josefin Sans";
+  text-align: center;
+  line-height: 100px;
+  font-size: 50px;
+  color: black;
+  width: 400px;
+  margin: auto;
+  margin-top: 70px;
 }
 
-.title.hurricane-regular {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: -500px;
-}
-
-.content {
+.bm {
+  text-align: center;
+  line-height: 100px;
+  font-family: "Hurricane";
+  font-size: 120px;
+  color: black;
+  width: 400px;
+  margin: auto;
   margin-top: 60px;
 }
 
-.logo h1 {
-  margin: 0;
-  font-size: 20px;
-  margin-top: -500px; /* Dodane */
-}
-
-button {
+.book {
   background-color: #F553B4;
   color: white;
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 18px;
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .history {
+  background-color: #F553B4;
   color: white;
-  margin-left: 1050px;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 18px;
+  margin: 0;
   position: absolute;
-  top: 0;
-  left: 10px;
-}
-
-h1 {
-  color: #000000;
-  font-family: "Josefin Sans";
-  font-size: 40px;
-  margin-top: 100px;
-  text-align: left;
-  margin-left: 80px;
-}
-
-hr {
-  display: block;
-  height: 2px;
-  border: 0;
-  border-top: 3px solid #000000;
-  margin: 1em 0;
-  padding: 0;
-  width:90%;
-  margin-left: 70px;
-} 
-
-.services-container { 
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.ser1 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-}
-
-.button-container1 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser2 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: -25px;
-}
-
-.button-container2 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser3 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container3 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser4 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container4 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser5 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container5 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser6 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container6 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser7 {
-  color: #000000;
-  font-size: 30px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container7 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  top: 80%;
+  left: 50%;
+  width: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 </style>
