@@ -61,7 +61,7 @@ const register = async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+  height: calc(100vh - 60px); 
 }
 
 .title {
@@ -73,7 +73,7 @@ const register = async () => {
 
 .content {
   width: 100%;
-  max-width: 400px; /* Maksymalna szerokość formularza */
+  max-width: 400px; 
   padding: 20px;
   background-color: transparent;
   border-radius: 4px;
@@ -85,17 +85,17 @@ const register = async () => {
 }
 
 .content form input {
-  width: 97%; /* Powiększa pola wprowadzania do pełnej szerokości */
+  width: 97%; 
   height: 20px;
-  padding: 10px; /* Dodaje padding dookoła tekstu */
+  padding: 10px; 
   border-radius: 4px;
   border: none;
 }
 
 .content form button {
   width: 100%;
-  background-color: #F553B4; /* Kolor tła przycisku */
-  color: #fff; /* Kolor tekstu na przycisku */
+  background-color: #F553B4; 
+  color: #fff; 
   border: none;
   border-radius: 4px;
   padding: 10px;
@@ -117,9 +117,9 @@ const register = async () => {
 }
 
 .input-container {
-  background-color: transparent; /* Zmień na kolor tła, który chcesz */
-  margin-bottom: 10px; /* Dodaje odstęp między polami */
-  padding: 10px; /* Dodaje padding dookoła pola */
+  background-color: transparent; 
+  margin-bottom: 10px; 
+  padding: 10px; 
 }
 
 

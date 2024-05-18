@@ -24,11 +24,10 @@ import TaskBar from './TaskBar.vue';
 
 <style scoped>
 #main-page {
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+  height: calc(100vh - 60px); 
 }
 .welcome {
   font-family: "Josefin Sans";

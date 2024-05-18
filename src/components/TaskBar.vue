@@ -25,7 +25,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const search = () => {
-  // Add search functionality here
   console.log("Searching...");
 };
 
@@ -34,15 +33,15 @@ const goToHomePage = () => {
 };
 
 const goToBookPage = () => {
-  router.push({ path: '/book' }); // Przekierowuje do komponentu Book
+  router.push({ path: '/book' }); 
 };
 
 const goToAboutUsPage = () => {
-  router.push({ path: '/about' }); // Przekierowuje do komponentu AboutUs
+  router.push({ path: '/about' }); 
 };
 
 const goToMainPage = () => {
-  router.push({ path: '/' }); // Przekierowuje do komponentu MainPage
+  router.push({ path: '/' }); 
 };
 </script>
   
@@ -52,14 +51,14 @@ const goToMainPage = () => {
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box; /* Dodane, aby uwzględnić padding i border w szerokości */
+  box-sizing: border-box; 
   background-color: white;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  z-index: 1000; /* Dodane, aby upewnić się, że pasek zadań jest zawsze na wierzchu */
+  z-index: 1000; 
 }
 
 .title {

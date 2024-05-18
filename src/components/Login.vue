@@ -60,7 +60,7 @@ const login = async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+  height: calc(100vh - 60px); 
 }
 
 .title {
@@ -72,7 +72,7 @@ const login = async () => {
 
 .content {
   width: 100%;
-  max-width: 400px; /* Maksymalna szerokość formularza */
+  max-width: 400px; 
   padding: 20px;
   background-color: transparent;
   border-radius: 4px;
@@ -84,17 +84,17 @@ const login = async () => {
 }
 
 .content form input {
-  width: 95%; /* Powiększa pola wprowadzania do pełnej szerokości */
+  width: 95%; 
   height: 20px;
-  padding: 10px; /* Dodaje padding dookoła tekstu */
-  border-radius: 4px; /* Dodaje zaokrąglone rogi */
+  padding: 10px; 
+  border-radius: 4px; 
   border: none;
 }
 
 .content form button {
   width: 100%;
-  background-color: #F553B4; /* Kolor tła przycisku */
-  color: #fff; /* Kolor tekstu na przycisku */
+  background-color: #F553B4; 
+  color: #fff; 
   border: none;
   border-radius: 4px;
   padding: 10px;
@@ -104,8 +104,8 @@ const login = async () => {
 
 .register {
   width: 100%;
-  background-color: #F553B4; /* Kolor tła przycisku */
-  color: #fff; /* Kolor tekstu na przycisku */
+  background-color: #F553B4; 
+  color: #fff; 
   border: none;
   border-radius: 4px;
   padding: 10px;

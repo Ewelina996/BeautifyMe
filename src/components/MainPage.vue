@@ -24,10 +24,11 @@ import TaskBar from './TaskBar.vue';
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+  height: calc(100vh - 60px); 
 }
 
 .title {
+  color: black;
   font-family: "Hurricane", cursive;
   font-weight: 400;
   font-size: 6em;
@@ -47,7 +48,7 @@ import TaskBar from './TaskBar.vue';
 .logo h1 {
   margin: 0;
   font-size: 20px;
-  margin-top: -500px; /* Dodane */
+  margin-top: -500px; 
 }
 
 </style>
