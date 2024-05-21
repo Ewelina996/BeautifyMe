@@ -16,7 +16,7 @@
         </div>
         <button type="submit">Log in</button>
         <p>or continue with</p>
-<button class="google-sign-in-button">
+<button @click="loginGoogle" class="google-sign-in-button">
   Google
 </button>
 <p>or create an account</p>
@@ -34,6 +34,7 @@
   <script setup>
   import { ref } from "vue";
   import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+  import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
   import TaskBar from './TaskBar.vue';
   import router from "../router";
   
@@ -52,6 +53,25 @@ const login = async () => {
     alert(error.message);
   }
 };
+
+const loginGoogle = async () => {
+  console.log(`Logging in with Google account email ${email.value}`);
+ 
+  const provider = new GoogleAuthProvider();
+  try {
+    await signInWithPopup (getAuth(), provider);
+    console.log("Successfully signed in");
+    router.push('/home');
+  } catch (error) {
+    console.log(error.code);
+    alert(error.message);
+  }
+
+}
+
+const provider = new GoogleAuthProvider();
+
+
 </script>
 
 <style scoped>
