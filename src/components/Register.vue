@@ -15,7 +15,7 @@
           <input type="password" id="password" v-model="password" placeholder="password">
         </div>
         <div class="input-container">
-          <input type="password" id="confirmPassword" v-model="confirmPassword" placeholder="confirm_password">
+          <input type="password" id="confirmPassword" v-model="confirmPassword" placeholder="confirm password">
         </div>
         <button type="submit">Create an account</button>
         <p>or continue with</p>
