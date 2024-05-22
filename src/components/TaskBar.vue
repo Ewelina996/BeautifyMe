@@ -37,12 +37,13 @@ const goToBookPage = () => {
 };
 
 const goToAboutUsPage = () => {
-  router.push({ path: '/about' }); 
+  router.push({ path: '/aboutus' }); 
 };
 
 const goToMainPage = () => {
   router.push({ path: '/' }); 
 };
+
 </script>
   
   <style scoped>
