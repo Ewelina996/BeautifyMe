@@ -3,8 +3,17 @@
       <task-bar></task-bar>
       <div class="content">        
       </div>
+    </div>  
+    <h1 class="specialist-header">Our specialists:</h1>
+    <div class="image-container">
+    <div class="image-item">
+      <img class="image" src="../assets/photo1.jpg" alt="Photo 1">
+      <p class="service-header">Alice</p>
+      <p class="italic-text">Hairdresser</p>
     </div>
-      <div class="services-container">
+    </div>
+    
+    <div class="services-container">
         <h1 class="header">SERVICES</h1>
         <div class="button-container">
           <a href="/history">
@@ -25,31 +34,6 @@
         <h2 class="ser2">Haircut for long hair</h2>
         <a href="/history">
           <button class="button-container2">Book</button>
-        </a>
-  
-        <h2 class="ser3">Hybrid manicure</h2>
-        <a href="/history">
-          <button class="button-container3">Book</button>
-        </a>
-  
-        <h2 class="ser4">Facial for acne-prone skin</h2>
-        <a href="/history">
-          <button class="button-container4">Book</button>
-        </a>
-  
-        <h2 class="ser5">Facial for dry skin</h2>
-        <a href="/history">
-          <button class="button-container5">Book</button>
-        </a>
-  
-        <h2 class="ser6">Relaxing back massage</h2>
-        <a href="/history">
-          <button class="button-container5">Book</button>
-        </a>
-  
-        <h2 class="ser7">Lashes extenions</h2>
-        <a href="/history">
-          <button class="button-container5">Book</button>
         </a>
       </div>
   </template>
@@ -109,7 +93,7 @@ button {
 h1 {
   color: #000000;
   font-family: "Josefin Sans";
-  font-size: 40px;
+  font-size: 30px;
   margin-top: 100px;
   text-align: left;
   margin-left: 80px;
@@ -128,12 +112,13 @@ hr {
 
 .services-container { 
   position: relative;
+  margin-top: -20px;
   margin-bottom: 10px;
 }
 
 .ser1 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -149,7 +134,7 @@ hr {
 
 .ser2 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -166,7 +151,7 @@ hr {
 
 .ser3 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -183,7 +168,7 @@ hr {
 
 .ser4 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -200,7 +185,7 @@ hr {
 
 .ser5 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -217,7 +202,7 @@ hr {
 
 .ser6 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -234,7 +219,7 @@ hr {
 
 .ser7 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -247,5 +232,55 @@ hr {
   position: absolute;
   left: 10px;
   margin-top: -70px;    
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin-left: 80px;
+}
+.centered-text {
+  text-align: center;
+  margin-left: 0;
+}
+
+.service-header {
+  color: #000000;
+  font-size: 25px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 70px;
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
+  color: #000000;
+  font-size: 20px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 70px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.specialist-header {
+  font-size: 25px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 70px;
+  margin-top: 5px;
 }
 </style>
