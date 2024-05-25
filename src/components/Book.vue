@@ -6,37 +6,43 @@
   </div>
   <body>
 
+    <button class="back-button">Back to previous page</button>
 
-    <h1>Our specialists:</h1>
+    <h1 class="specialists-header">Our specialists:</h1>
     <div class="image-container">
     <div class="image-item">
       <a :href="'/Alice'">
         <img src="../assets/photo1.jpg" alt="Photo 1">
-        <p>Alice</p>
+        <p class="name-text">Alice</p>
+        <p class="italic-text">Hairdresser</p>
       </a>
     </div>
     <div class="image-item">
       <a :href="'/Katharina'">
         <img src="../assets/photo2.png" alt="Photo 2">
-        <p>Katharina</p>
+        <p class="name-text">Katharina</p>
+        <p class="italic-text">Beautician</p>
       </a>
     </div>
     <div class="image-item">
       <a :href="'/Alex'">
         <img src="../assets/photo3.jpg" alt="Photo 3">
-        <p>Alex</p>
+        <p class="name-text">Alex</p>
+        <p class="italic-text">Hairdresser</p>
       </a>
     </div>
     <div class="image-item">
       <a :href="'/Rose'">
         <img src="../assets/photo4.png" alt="Photo 4">
-        <p>Rose</p>
+        <p class="name-text">Rose</p>
+        <p class="italic-text">Hairdresser</p>
       </a>
     </div>
     <div class="image-item">
       <a :href="'/Monique'">
         <img src="../assets/photo5.jpg" alt="Photo 5">
-        <p>Monique</p>
+        <p class="name-text">Monique</p>
+        <p class="italic-text">Hairdresser & beautician</p>
       </a>
     </div>
   </div> 
@@ -148,7 +154,7 @@ button {
 h1 {
   color: #000000;
   font-family: "Josefin Sans";
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 100px;
   text-align: left;
   margin-left: 80px;
@@ -167,6 +173,7 @@ hr {
 
 .services-container { 
   position: relative;
+  margin-top: -20px;
   margin-bottom: 10px;
 }
 
@@ -205,7 +212,7 @@ hr {
 
 .ser3 {
   color: #000000;
-  font-size: 25pxx;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -309,4 +316,23 @@ hr {
   font-weight: bold;
   color: black;
 }
+
+.italic-text {
+  font-style: italic;
+}
+
+.name-text {
+  font-size: 20px;
+}
+
+.specialists-header {
+  margin-top: 10px;
+}
+
+.back-button {
+  position: fixed;
+  top: 80px; /* Odległość od góry */
+  right: 365px; /* Odległość od prawej strony */
+}
+
 </style>
