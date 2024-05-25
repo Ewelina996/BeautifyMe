@@ -5,9 +5,44 @@
     </div>
   </div>
   <body>
-    
-    <!-- <button class="history">My bookings</button><br> -->
-    <div class="services-container">
+
+
+    <h1>Our specialists:</h1>
+    <div class="image-container">
+    <div class="image-item">
+      <a :href="'/Alice'">
+        <img src="../assets/photo1.jpg" alt="Photo 1">
+        <p>Alice</p>
+      </a>
+    </div>
+    <div class="image-item">
+      <a :href="'/Katharina'">
+        <img src="../assets/photo2.png" alt="Photo 2">
+        <p>Katharina</p>
+      </a>
+    </div>
+    <div class="image-item">
+      <a :href="'/Alex'">
+        <img src="../assets/photo3.jpg" alt="Photo 3">
+        <p>Alex</p>
+      </a>
+    </div>
+    <div class="image-item">
+      <a :href="'/Rose'">
+        <img src="../assets/photo4.png" alt="Photo 4">
+        <p>Rose</p>
+      </a>
+    </div>
+    <div class="image-item">
+      <a :href="'/Monique'">
+        <img src="../assets/photo5.jpg" alt="Photo 5">
+        <p>Monique</p>
+      </a>
+    </div>
+  </div> 
+
+
+  <div class="services-container">
       <h1 class="header">OUR SERVICES</h1>
       <div class="button-container">
         <a href="/history">
@@ -22,7 +57,7 @@
 
       <h2 class="ser1">Haircut for short hair</h2>
       <a href="/history">
-        <button class="button-container1">Book</button>><br>
+        <button class="button-container1">Book</button><br>
       </a>
 
       <h2 class="ser2">Haircut for long hair</h2>
@@ -91,7 +126,7 @@ import TaskBar from './TaskBar.vue';
 .logo h1 {
   margin: 0;
   font-size: 20px;
-  margin-top: -500px; /* Dodane */
+  margin-top: -500px; 
 }
 
 button {
@@ -113,7 +148,7 @@ button {
 h1 {
   color: #000000;
   font-family: "Josefin Sans";
-  font-size: 40px;
+  font-size: 20px;
   margin-top: 100px;
   text-align: left;
   margin-left: 80px;
@@ -137,7 +172,7 @@ hr {
 
 .ser1 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -153,7 +188,7 @@ hr {
 
 .ser2 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -170,7 +205,7 @@ hr {
 
 .ser3 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25pxx;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -187,7 +222,7 @@ hr {
 
 .ser4 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -204,7 +239,7 @@ hr {
 
 .ser5 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -221,7 +256,7 @@ hr {
 
 .ser6 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -238,7 +273,7 @@ hr {
 
 .ser7 {
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
@@ -253,4 +288,25 @@ hr {
   margin-top: -70px;    
 }
 
+.image-container { /* Dodane */
+  display: flex;
+  justify-content: flex-start;
+  gap: 0px;
+  margin-right:300px;
+}
+
+.image-container img { /* Dodane */
+  width: 50%;
+}
+
+.image-item { /* Dodane */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-item p { /* Dodane */
+  font-weight: bold;
+  color: black;
+}
 </style>

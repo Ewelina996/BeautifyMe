@@ -43,6 +43,7 @@ const goToAboutUsPage = () => {
 const goToMainPage = () => {
   router.push({ path: '/' }); 
 };
+
 </script>
   
   <style scoped>
