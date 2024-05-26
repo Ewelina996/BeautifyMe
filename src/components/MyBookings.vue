@@ -1,20 +1,26 @@
 <template>
     <div id="mybookings">
       <task-bar></task-bar>
+      <button class="back-button" @click="goHome">Back to previous page</button>
     </div>
     <head>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap">
     </head>
-    <body>  
       <h1 class="welcome">My Bookings:</h1>
       <a href="/book">
       <button class="book">New booking</button><br>
     </a>
-    </body>
   </template>
   
   <script setup>
   import TaskBar from './TaskBar.vue';
+  import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goHome = () => {
+  router.push('book');
+};
   </script>
   
   <style scoped>
@@ -75,5 +81,19 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+  .back-button {
+  position: absolute;
+  top: 80px; /* Odległość od góry */
+  right: 365px; /* Odległość od prawej strony */
+}
+
+button {
+  background-color: #F553B4;
+  color: white;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 18px;
+}
   
   </style>

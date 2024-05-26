@@ -1,98 +1,66 @@
 <template>
-  <div id="haircutshort">
+  <div id="haircut-short">
     <task-bar></task-bar>
+    <button class="back-button" @click="goHome">Back to previous page</button>
     <div class="content">        
-    </div>
-  </div>
-  <body>
-
-
-    <h1>Our specialists:</h1>
+    <h1 class="specialists-header">Available specialists for "Haircut for short hair":</h1>
     <div class="image-container">
     <div class="image-item">
       <a :href="'/Alice'">
         <img src="../assets/photo1.jpg" alt="Photo 1">
-        <p>Alice</p>
+        <p class="name-text">Alice</p>
+        <p class="italic-text">Hairdresser</p>
       </a>
-    </div>
-    <div class="image-item">
-      <a :href="'/Katharina'">
-        <img src="../assets/photo2.png" alt="Photo 2">
-        <p>Katharina</p>
+      <a :href="'/Calendar'">
+        <button class="button-container1">Book</button><br>
       </a>
     </div>
     <div class="image-item">
       <a :href="'/Alex'">
         <img src="../assets/photo3.jpg" alt="Photo 3">
-        <p>Alex</p>
+        <p class="name-text">Alex</p>
+        <p class="italic-text">Hairdresser</p>
       </a>
+      <a :href="'/Calendar'">
+        <button class="button-container2">Book</button><br>
+      </a>
+    
     </div>
     <div class="image-item">
       <a :href="'/Rose'">
         <img src="../assets/photo4.png" alt="Photo 4">
-        <p>Rose</p>
+        <p class="name-text">Rose</p>
+        <p class="italic-text">Hairdresser</p>
       </a>
+      <a :href="'/Calendar'">
+        <button class="button-container3">Book</button><br>
+      </a>
+    
     </div>
     <div class="image-item">
       <a :href="'/Monique'">
         <img src="../assets/photo5.jpg" alt="Photo 5">
-        <p>Monique</p>
+        <p class="name-text">Monique</p>
+        <p class="italic-text">Hairdresser & beautician</p>
+      </a>
+      <a :href="'/Calendar'">
+        <button class="button-container4">Book</button><br>
       </a>
     </div>
   </div> 
-
-
-  <div class="services-container">
-      <h1 class="header">OUR SERVICES</h1>
-      <div class="button-container">
-        <a href="/history">
-          <button class="history">My bookings</button>
-        </a>
-      </div>
-    </div>
-
-    <hr/>
-
-    <div class="booking-containers">
-
-      <h2 class="ser1">Haircut for short hair</h2>
-        <button class="button-container1">Book</button>><br>
-
-      <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/history">
-        <button class="button-container2">Book</button>
-      </a>
-
-      <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/history">
-        <button class="button-container3">Book</button>
-      </a>
-
-      <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/history">
-        <button class="button-container4">Book</button>
-      </a>
-
-      <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/history">
-        <button class="button-container5">Book</button>
-      </a>
-
-      <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/history">
-        <button class="button-container5">Book</button>
-      </a>
-
-      <h2 class="ser7">Lashes extenions</h2>
-      <a href="/history">
-        <button class="button-container5">Book</button>
-      </a>
-    </div>
-  </body>
+</div>
+</div>
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goHome = () => {
+  router.push('book');
+};
 </script>
 
 <style scoped>
@@ -135,7 +103,7 @@ button {
   border-radius: 18px;
 }
 
-.history {
+.mybookings {
   color: white;
   margin-left: 1050px;
   position: absolute;
@@ -146,7 +114,7 @@ button {
 h1 {
   color: #000000;
   font-family: "Josefin Sans";
-  font-size: 25px;
+  font-size: 30px;
   margin-top: 100px;
   text-align: left;
   margin-left: 80px;
@@ -165,6 +133,7 @@ hr {
 
 .services-container { 
   position: relative;
+  margin-top: -20px;
   margin-bottom: 10px;
 }
 
@@ -180,8 +149,8 @@ hr {
   color: white;
   margin-left: 1200px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  left: -805px;
+  margin-top: 0px;    
 }
 
 .ser2 {
@@ -197,93 +166,24 @@ hr {
   color: white;
   margin-left: 1200px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser3 {
-  color: #000000;
-  font-size: 25pxx;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
+  left: -560px;
+  margin-top: 0px;    
 }
 
 .button-container3 {
   color: white;
   margin-left: 1200px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser4 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
+  left: -312px;
+  margin-top: 0px;    
 }
 
 .button-container4 {
   color: white;
   margin-left: 1200px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser5 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container5 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser6 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container6 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
-}
-
-.ser7 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 5px;
-}
-
-.button-container7 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  left: -60px;
+  margin-top: 0px;    
 }
 
 .image-container { /* Dodane */
@@ -291,6 +191,7 @@ hr {
   justify-content: flex-start;
   gap: 0px;
   margin-right:300px;
+  margin-top: 70px;
 }
 
 .image-container img { /* Dodane */
@@ -301,10 +202,30 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .image-item p { /* Dodane */
   font-weight: bold;
   color: black;
 }
+
+.italic-text {
+  font-style: italic;
+}
+
+.name-text {
+  font-size: 20px;
+}
+
+.specialists-header {
+  margin-top: 10px;
+}
+
+.back-button {
+  position: fixed;
+  top: 80px; /* Odległość od góry */
+  right: 365px; /* Odległość od prawej strony */
+}
+
 </style>

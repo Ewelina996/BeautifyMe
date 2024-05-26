@@ -4,9 +4,7 @@
     <div class="content">        
     </div>
   </div>
-  <body>
-
-    <button class="back-button">Back to previous page</button>
+    <button class="back-button" @click="goHome">Back to previous page</button>
 
     <h1 class="specialists-header">Our specialists:</h1>
     <div class="image-container">
@@ -62,45 +60,51 @@
     <div class="booking-containers">
 
       <h2 class="ser1">Haircut for short hair</h2>
-      <a href="/history">
+      <a href="/HaircutShort">
         <button class="button-container1">Book</button><br>
       </a>
 
       <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/history">
+      <a href="/HaircutLong">
         <button class="button-container2">Book</button>
       </a>
 
       <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/history">
+      <a href="/HybridManicure">
         <button class="button-container3">Book</button>
       </a>
 
       <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/history">
+      <a href="/FacialAcne">
         <button class="button-container4">Book</button>
       </a>
 
       <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/history">
+      <a href="/FacialDry">
         <button class="button-container5">Book</button>
       </a>
 
       <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/history">
+      <a href="/Massage">
         <button class="button-container5">Book</button>
       </a>
 
-      <h2 class="ser7">Lashes extenions</h2>
-      <a href="/history">
+      <h2 class="ser7">Lashes extensions</h2>
+      <a href="/Lashes">
         <button class="button-container5">Book</button>
       </a>
     </div>
-  </body>
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goHome = () => {
+  router.push('home');
+};
 </script>
 
 <style scoped>
@@ -330,7 +334,7 @@ hr {
 }
 
 .back-button {
-  position: fixed;
+  position: absolute;
   top: 80px; /* Odległość od góry */
   right: 365px; /* Odległość od prawej strony */
 }

@@ -20,6 +20,7 @@ import Lashes from "./components/Lashes.vue";
 import Massage from "./components/Massage.vue";
 import MyBookings from "./components/MyBookings.vue";
 import Payment from "./components/Payment.vue";
+import Calendar from "./components/Calendar.vue";
 
 
 const routes = [
@@ -91,7 +92,7 @@ const routes = [
     },
 
     {
-      path: '/haircut-short',
+      path: '/haircutshort',
       name: 'HaircutShort',
       component: HaircutShort
     },
@@ -144,7 +145,14 @@ const routes = [
       name: 'Payment',
       component: Payment
     
-    }
+    },
+
+    {
+      path: '/calendar',
+      name: 'Calendar',
+      component: Calendar
+    
+    },
 
 ];
 
