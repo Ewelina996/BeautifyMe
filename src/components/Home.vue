@@ -11,7 +11,7 @@
     <a href="/book">
       <button class="book">See all available services</button><br>
     </a>
-    <a href="/history">
+    <a href="/mybookings">
       <button class="history">My bookings</button>
     </a>
     

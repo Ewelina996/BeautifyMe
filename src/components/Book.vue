@@ -51,8 +51,8 @@
   <div class="services-container">
       <h1 class="header">OUR SERVICES</h1>
       <div class="button-container">
-        <a href="/history">
-          <button class="history">My bookings</button>
+        <a href="/MyBookings">
+          <button class="mybookings">My bookings</button>
         </a>
       </div>
     </div>
@@ -143,7 +143,7 @@ button {
   border-radius: 18px;
 }
 
-.history {
+.mybookings {
   color: white;
   margin-left: 1050px;
   position: absolute;

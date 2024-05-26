@@ -18,6 +18,8 @@ import FacialDry from "./components/FacialDry.vue";
 import HybridManicure from "./components/HybridManicure.vue";
 import Lashes from "./components/Lashes.vue";
 import Massage from "./components/Massage.vue";
+import MyBookings from "./components/MyBookings.vue";
+import Payment from "./components/Payment.vue";
 
 
 const routes = [
@@ -129,6 +131,20 @@ const routes = [
       name: 'Massage',
       component: Massage
     },
+
+    {
+      path: '/mybookings',
+      name: 'MyBookings',
+      component: MyBookings
+    
+    },
+
+    {
+      path: '/payment',
+      name: 'Payment',
+      component: Payment
+    
+    }
 
 ];
 
