@@ -9,6 +9,7 @@
             <li><a @click.prevent="goToHomePage" class="nav-link">Home</a></li>
             <li><a @click.prevent="goToBookPage" class="nav-link">Book</a></li>
             <li><a @click.prevent="goToAboutUsPage" class="nav-link">About Us</a></li>
+            <li><a @click="handleSignout" v-if="isLoggedIn" class="nav-link">Logout</a></li>
         </ul>
       </nav>
     </div>
@@ -21,6 +22,8 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import { onMounted, ref } from 'vue';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const router = useRouter();
 
@@ -43,6 +46,27 @@ const goToAboutUsPage = () => {
 const goToMainPage = () => {
   router.push({ path: '/' }); 
 };
+
+const isLoggedIn = ref(false);
+
+let auth;
+
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth,(user) => {
+    if(user) {
+      isLoggedIn.value = true;
+    } else {
+      isLoggedIn.value = false;
+    }
+  });
+});
+
+const handleSignout = () => {
+  signOut(auth).then(() => {
+    router.push("/")
+  });
+}
 
 </script>
   
