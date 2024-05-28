@@ -23,7 +23,7 @@
           </v-row>
         </v-container>
 
-      <v-select :items="items" item-title="name" label="User">
+      <v-select :items="items" item-title="name" label="User" class="test">
         <template v-slot:item="{ props, item }">
           <v-list-item v-bind="props" :subtitle="item.raw.department"></v-list-item>
         </template>
@@ -119,7 +119,7 @@
     color: white;
     margin-left: 1050px;
     position: absolute;
-    top: 0;
+    top: 35px;
     left: 10px;
   }
   
@@ -310,6 +310,12 @@
 
   .calendar {
     margin-left: 40px;
+  }
+
+  .test {
+    width: 50%;
+    justify-content: center;
+    margin-left: 400px;
   }
   
   </style>
