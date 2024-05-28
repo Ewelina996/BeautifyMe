@@ -1,8 +1,9 @@
 # BeautifyMe
 
-npm i
+npm i\n
 npm i firebase
 npm i vue-router
+npm i vuetify
 
 #### Tytuł aplikacji: BeautifyMe
 Link do projektu interfejsu aplikacji:

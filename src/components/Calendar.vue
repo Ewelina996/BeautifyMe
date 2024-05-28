@@ -5,66 +5,74 @@
       </div>
     </div>
     <body>
-  
-      <button class="back-button">Back to previous page</button>
-  
-      <h1 class="specialists-header">Our specialists:</h1>
-      <div class="image-container">
-      <div class="image-item">
-        <a :href="'/Alice'">
-          <img src="../assets/photo1.jpg" alt="Photo 1">
-          <p class="name-text">Alice</p>
-          <p class="italic-text">Hairdresser</p>
-        </a>
-      </div>
-      <div class="image-item">
-        <a :href="'/Katharina'">
-          <img src="../assets/photo2.png" alt="Photo 2">
-          <p class="name-text">Katharina</p>
-          <p class="italic-text">Beautician</p>
-        </a>
-      </div>
-      <div class="image-item">
-        <a :href="'/Alex'">
-          <img src="../assets/photo3.jpg" alt="Photo 3">
-          <p class="name-text">Alex</p>
-          <p class="italic-text">Hairdresser</p>
-        </a>
-      </div>
-      <div class="image-item">
-        <a :href="'/Rose'">
-          <img src="../assets/photo4.png" alt="Photo 4">
-          <p class="name-text">Rose</p>
-          <p class="italic-text">Hairdresser</p>
-        </a>
-      </div>
-      <div class="image-item">
-        <a :href="'/Monique'">
-          <img src="../assets/photo5.jpg" alt="Photo 5">
-          <p class="name-text">Monique</p>
-          <p class="italic-text">Hairdresser & beautician</p>
-        </a>
-      </div>
-    </div> 
-  
-  
+
     <div class="services-container">
-        <h1 class="header">TU BĘDZIE KALENDARZ: DO DOKOŃCZENIA</h1>
-        <div class="button-container">
-          <a href="/MyBookings">
-            <button class="mybookings">My bookings</button>
-          </a>
-        </div>
+      <h1>Your stylist:</h1>
+
+      <hr class="line"/>
+
+      <div class="button-container">
+        <a href="/MyBookings">
+          <button class="mybookings">My bookings</button>
+        </a>
       </div>
-  
-      <hr/>
-  
- 
+
+        <v-container class="calendar">
+          <v-row justify="space-around">
+            <v-date-picker elevation="24"></v-date-picker>
+          </v-row>
+        </v-container>
+
+      <v-select :items="items" item-title="name" label="User">
+        <template v-slot:item="{ props, item }">
+          <v-list-item v-bind="props" :subtitle="item.raw.department"></v-list-item>
+        </template>
+      </v-select>
+        
+    </div>   
     </body>
   </template>
-  
+
   <script setup>
-  import TaskBar from './TaskBar.vue';
+    import TaskBar from './TaskBar.vue';
+  </script>
+
+  <script>
+
+  export default {
+    data: () => ({
+      items: [
+        {
+          name: 'John',
+          department: 'Marketing',
+        },
+        {
+          name: 'Jane',
+          department: 'Engineering',
+        },
+        {
+          name: 'Joe',
+          department: 'Sales',
+        },
+        {
+          name: 'Janet',
+          department: 'Engineering',
+        },
+        {
+          name: 'Jake',
+          department: 'Marketing',
+        },
+        {
+          name: 'Jack',
+          department: 'Sales',
+        },
+        {
+          stylist: 'Anna',
+        },
+      ],
+    }),
+  }
+
   </script>
   
   <style scoped>
@@ -119,20 +127,21 @@
     color: #000000;
     font-family: "Josefin Sans";
     font-size: 30px;
-    margin-top: 100px;
     text-align: left;
-    margin-left: 80px;
+    margin-top: 50px;
+    margin-left: 50px;
   }
   
-  hr {
+  .line {
     display: block;
     height: 2px;
     border: 0;
     border-top: 3px solid #000000;
     margin: 1em 0;
+    margin-top: 30px;
     padding: 0;
-    width:90%;
-    margin-left: 70px;
+    width: 1150px;
+    margin-left: 50px;
   } 
   
   .services-container { 
@@ -297,6 +306,10 @@
     position: fixed;
     top: 80px; /* Odległość od góry */
     right: 365px; /* Odległość od prawej strony */
+  }
+
+  .calendar {
+    margin-left: 40px;
   }
   
   </style>
