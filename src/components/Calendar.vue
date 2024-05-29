@@ -7,7 +7,7 @@
     <body>
 
     <div class="services-container">
-      <h1>Your stylist:</h1>
+      <h1>Your beautician:</h1>
 
       <hr class="line"/>
 
@@ -23,11 +23,13 @@
           </v-row>
         </v-container>
 
-      <v-select :items="items" item-title="name" label="User" class="test">
+      <v-select :items="items" item-title="hour" label="Choose appointment hour" class="hours">
         <template v-slot:item="{ props, item }">
-          <v-list-item v-bind="props" :subtitle="item.raw.department"></v-list-item>
+          <v-list-item v-bind="props"></v-list-item>
         </template>
       </v-select>
+
+      <button @click="sendData" class="bookButton">BOOK YOUR APPOINTMENT</button>
         
     </div>   
     </body>
@@ -35,6 +37,28 @@
 
   <script setup>
     import TaskBar from './TaskBar.vue';
+    import { collection, addDoc } from "firebase/firestore"; 
+    import { db } from '../main.js'
+    import { store } from "../App.vue";
+
+    const beautician = store.beautician;
+
+    const sendData = async () => {
+      try {
+      const docRef = await addDoc(collection(db, "appointments"), {
+        beautician: beautician,
+        service: "dupa1",
+        client: "Iksde",
+        date: "Iksde",
+        hour: "Iksde",
+      });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
+    
+
   </script>
 
   <script>
@@ -43,35 +67,27 @@
     data: () => ({
       items: [
         {
-          name: 'John',
-          department: 'Marketing',
+          hour: '8:00-10:00',
         },
         {
-          name: 'Jane',
-          department: 'Engineering',
+          hour: '10:00-12:00',
         },
         {
-          name: 'Joe',
-          department: 'Sales',
+          hour: '12:00-14:00',
         },
         {
-          name: 'Janet',
-          department: 'Engineering',
+          hour: '14:00-16:00',
         },
         {
-          name: 'Jake',
-          department: 'Marketing',
+          hour: '16:00-18:00',
         },
-        {
-          name: 'Jack',
-          department: 'Sales',
-        },
-        {
-          stylist: 'Anna',
-        },
+
       ],
+      props: { choosenBeautician: String },
     }),
   }
+
+
 
   </script>
   
@@ -312,10 +328,11 @@
     margin-left: 40px;
   }
 
-  .test {
+  .hours {
     width: 50%;
     justify-content: center;
     margin-left: 400px;
+    margin-top: 10px;
   }
   
   </style>

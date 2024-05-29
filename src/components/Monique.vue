@@ -27,37 +27,37 @@
     <div class="booking-containers">
 
       <h2 class="ser1">Haircut for short hair</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container1">Book</button>><br>
       </a>
 
       <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container2">Book</button>
       </a>
 
       <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container3">Book</button>
       </a>
 
       <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container4">Book</button>
       </a>
 
       <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container5">Book</button>
       </a>
 
       <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container5">Book</button>
       </a>
 
       <h2 class="ser7">Lashes extenions</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container5">Book</button>
       </a>
     </div>
@@ -65,7 +65,16 @@
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { store } from "../App.vue";
+
+console.log(store.beautician)
+
+store.changeBeautician("Monique")
+
+console.log(store.beautician)
+
 </script>
+
 
 <style scoped>
 #main-page {

@@ -4,6 +4,9 @@ npm i\n
 npm i firebase
 npm i vue-router
 npm i vuetify
+npm install firebase@10.12.1 --save
+npm install pinia
+
 
 #### Tytuł aplikacji: BeautifyMe
 Link do projektu interfejsu aplikacji:

@@ -27,12 +27,12 @@
     <div class="booking-containers">
 
       <h2 class="ser1">Haircut for short hair</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container1">Book</button>><br>
       </a>
 
       <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container2">Book</button>
       </a>
     </div>

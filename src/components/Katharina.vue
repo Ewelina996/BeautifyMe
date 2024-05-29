@@ -27,27 +27,27 @@
     <div class="booking-containers">
 
       <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container3">Book</button>
       </a>
 
       <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container4">Book</button>
       </a>
 
       <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container5">Book</button>
       </a>
 
       <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container5">Book</button>
       </a>
 
       <h2 class="ser7">Lashes extenions</h2>
-      <a href="/history">
+      <a href="/calendar">
         <button class="button-container5">Book</button>
       </a>
     </div>

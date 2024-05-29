@@ -14,7 +14,6 @@
     <a href="/mybookings">
       <button class="history">My bookings</button>
     </a>
-    
   </body>
 </template>
 
