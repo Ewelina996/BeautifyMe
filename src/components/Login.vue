@@ -47,7 +47,7 @@ const login = async () => {
   try {
     await signInWithEmailAndPassword(getAuth(), email.value, password.value);
     console.log("Successfully signed in");
-    router.push('/home');
+    router.push({path:'/home'});
   } catch (error) {
     console.log(error.code);
     alert(error.message);
@@ -56,12 +56,11 @@ const login = async () => {
 
 const loginGoogle = async () => {
   console.log(`Logging in with Google account email ${email.value}`);
- 
   const provider = new GoogleAuthProvider();
   try {
     await signInWithPopup (getAuth(), provider);
     console.log("Successfully signed in");
-    router.push('/home');
+    router.push({path:'/home'});
   } catch (error) {
     console.log(error.code);
     alert(error.message);

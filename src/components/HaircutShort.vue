@@ -5,24 +5,29 @@
     <div class="content">        
     <h1 class="specialists-header">Available specialists for "Haircut for short hair":</h1>
     <div class="image-container">
+
     <div class="image-item">
       <a :href="'/Alice'">
         <img src="../assets/photo1.jpg" alt="Photo 1">
         <p class="name-text">Alice</p>
         <p class="italic-text">Hairdresser</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container1">Book</button><br>
+
+      <a>
+        <button class="button-container1" @click="goToCalendar(stylist1)">Book</button>><br>
       </a>
+
     </div>
+
     <div class="image-item">
       <a :href="'/Alex'">
         <img src="../assets/photo3.jpg" alt="Photo 3">
         <p class="name-text">Alex</p>
         <p class="italic-text">Hairdresser</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container2">Book</button><br>
+
+      <a>
+        <button class="button-container2" @click="goToCalendar(stylist2)">Book</button>><br>
       </a>
     
     </div>
@@ -32,8 +37,9 @@
         <p class="name-text">Rose</p>
         <p class="italic-text">Hairdresser</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container3">Book</button><br>
+
+      <a>
+        <button class="button-container3" @click="goToCalendar(stylist3)">Book</button>><br>
       </a>
     
     </div>
@@ -43,24 +49,41 @@
         <p class="name-text">Monique</p>
         <p class="italic-text">Hairdresser & beautician</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container4">Book</button><br>
+
+      <a>
+        <button class="button-container4" @click="goToCalendar(stylist4)">Book</button>><br>
       </a>
     </div>
   </div> 
 </div>
 </div>
+
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
-import { useRouter } from 'vue-router';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
 
+const stylist1 = "Alice";
+const stylist2 = "Alex";
+const stylist3 = "Rose";
+const stylist4 = "Monique";
+
+const localStore = useStore();
 const router = useRouter();
+
+localStore.changeService('Haircut for short hair');
 
 const goHome = () => {
   router.push('book');
 };
+
+function goToCalendar(value) {
+  localStore.changeBeautician(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>
@@ -186,7 +209,7 @@ hr {
   margin-top: 0px;    
 }
 
-.image-container { /* Dodane */
+.image-container {
   display: flex;
   justify-content: flex-start;
   gap: 0px;
@@ -194,18 +217,18 @@ hr {
   margin-top: 70px;
 }
 
-.image-container img { /* Dodane */
+.image-container img {
   width: 50%;
 }
 
-.image-item { /* Dodane */
+.image-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-.image-item p { /* Dodane */
+.image-item p {
   font-weight: bold;
   color: black;
 }
@@ -224,8 +247,8 @@ hr {
 
 .back-button {
   position: fixed;
-  top: 80px; /* Odległość od góry */
-  right: 365px; /* Odległość od prawej strony */
+  top: 80px;
+  right: 365px;
 }
 
 </style>

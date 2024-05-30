@@ -26,35 +26,54 @@
 
     <div class="booking-containers">
 
-      <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/calendar">
-        <button class="button-container3">Book</button>
+      <h2 class="ser1">{{ service1 }}</h2>
+      <a>
+        <button class="button-container1" @click="goToCalendar(service1)">Book</button>><br>
       </a>
 
-      <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/calendar">
-        <button class="button-container4">Book</button>
+      <h2 class="ser2">{{ service2 }}</h2>
+      <a>
+        <button class="button-container2" @click="goToCalendar(service2)">Book</button>><br>
       </a>
 
-      <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/calendar">
-        <button class="button-container5">Book</button>
+      <h2 class="ser3">{{ service3 }}</h2>
+      <a>
+        <button class="button-container3" @click="goToCalendar(service3)">Book</button>><br>
       </a>
 
-      <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/calendar">
-        <button class="button-container5">Book</button>
+      <h2 class="ser4">{{ service4 }}</h2>
+      <a>
+        <button class="button-container4" @click="goToCalendar(service4)">Book</button>><br>
       </a>
 
-      <h2 class="ser7">Lashes extenions</h2>
-      <a href="/calendar">
-        <button class="button-container5">Book</button>
+      <h2 class="ser5">{{ service5 }}</h2>
+      <a>
+        <button class="button-container5" @click="goToCalendar(service5)">Book</button>><br>
       </a>
     </div>
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
+
+const service1 = 'Hybrid manicure';
+const service2 = 'Facial for acne-prone skin';
+const service3 = 'Facial for dry skin';
+const service4 = 'Relaxing back massage';
+const service5 = 'Lashes extenions';
+
+const localStore = useStore();
+const router = useRouter();
+
+localStore.changeBeautician('Katharina');
+
+function goToCalendar(value) {
+  localStore.changeService(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>
@@ -215,40 +234,6 @@ left: 10px;
 margin-top: -70px;    
 }
 
-.ser6 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container6 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser7 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container7 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
 .image-container {
 display: flex;
 justify-content: flex-start;
@@ -298,4 +283,5 @@ text-align: left;
 margin-left: 70px;
 margin-top: 5px;
 }
+
 </style>

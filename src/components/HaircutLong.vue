@@ -14,54 +14,79 @@
         <p class="name-text">Alice</p>
         <p class="italic-text">Hairdresser</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container1">Book</button><br>
+
+      <a>
+        <button class="button-container1" @click="goToCalendar(stylist1)">Book</button>><br>
       </a>
+
     </div>
+
     <div class="image-item">
       <a :href="'/Alex'">
         <img src="../assets/photo3.jpg" alt="Photo 3">
         <p class="name-text">Alex</p>
         <p class="italic-text">Hairdresser</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container2">Book</button><br>
+
+      <a>
+        <button class="button-container2" @click="goToCalendar(stylist2)">Book</button>><br>
       </a>
     
     </div>
+
     <div class="image-item">
       <a :href="'/Rose'">
         <img src="../assets/photo4.png" alt="Photo 4">
         <p class="name-text">Rose</p>
         <p class="italic-text">Hairdresser</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container3">Book</button><br>
+
+      <a>
+        <button class="button-container3" @click="goToCalendar(stylist3)">Book</button>><br>
       </a>
     
     </div>
+
     <div class="image-item">
       <a :href="'/Monique'">
         <img src="../assets/photo5.jpg" alt="Photo 5">
         <p class="name-text">Monique</p>
         <p class="italic-text">Hairdresser & beautician</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container4">Book</button><br>
+
+      <a>
+        <button class="button-container4" @click="goToCalendar(stylist4)">Book</button>><br>
       </a>
+
     </div>
+
   </div> 
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
-import { useRouter } from 'vue-router';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
 
+const stylist1 = "Alice";
+const stylist2 = "Alex";
+const stylist3 = "Rose";
+const stylist4 = "Monique";
+
+const localStore = useStore();
 const router = useRouter();
+
+localStore.changeService('Haircut for long hair');
 
 const goHome = () => {
   router.push('book');
 };
+
+function goToCalendar(value) {
+  localStore.changeBeautician(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>
@@ -225,10 +250,9 @@ hr {
 
 .back-button {
   position: fixed;
-  top: 80px; /* Odległość od góry */
-  right: 365px; /* Odległość od prawej strony */
+  top: 80px;
+  right: 365px;
 }
-
 
 button {
   background-color: #F553B4;

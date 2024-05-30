@@ -1,7 +1,17 @@
 <script>
-import { useStore } from "./store";
+// import { useStore } from "./store";
 
-export const store = useStore();
+// const store = useStore();
+
+// export { store }
+
+// export default {
+//   data () {
+//     return {
+//       store
+//     }
+//   }
+// }
 
 </script>
 

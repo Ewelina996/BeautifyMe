@@ -4,47 +4,44 @@
     <div class="content">        
     </div>
   </div>
-    <button class="back-button" @click="goHome">Back to previous page</button>
-
     <h1 class="specialists-header">Our specialists:</h1>
     <div class="image-container">
-    <div class="image-item">
-      <a :href="'/Alice'">
-        <img src="../assets/photo1.jpg" alt="Photo 1">
-        <p class="name-text">Alice</p>
-        <p class="italic-text">Hairdresser</p>
-      </a>
-    </div>
-    <div class="image-item">
-      <a :href="'/Katharina'">
-        <img src="../assets/photo2.png" alt="Photo 2">
-        <p class="name-text">Katharina</p>
-        <p class="italic-text">Beautician</p>
-      </a>
-    </div>
-    <div class="image-item">
-      <a :href="'/Alex'">
-        <img src="../assets/photo3.jpg" alt="Photo 3">
-        <p class="name-text">Alex</p>
-        <p class="italic-text">Hairdresser</p>
-      </a>
-    </div>
-    <div class="image-item">
-      <a :href="'/Rose'">
-        <img src="../assets/photo4.png" alt="Photo 4">
-        <p class="name-text">Rose</p>
-        <p class="italic-text">Hairdresser</p>
-      </a>
-    </div>
-    <div class="image-item">
-      <a :href="'/Monique'">
-        <img src="../assets/photo5.jpg" alt="Photo 5">
-        <p class="name-text">Monique</p>
-        <p class="italic-text">Hairdresser & beautician</p>
-      </a>
-    </div>
+      <div class="image-item">
+        <a :href="'/Alice'">
+          <img src="../assets/photo1.jpg" alt="Photo 1">
+          <p class="name-text">Alice</p>
+          <p class="italic-text">Hairdresser</p>
+        </a>
+      </div>
+      <div class="image-item">
+        <a :href="'/Katharina'">
+          <img src="../assets/photo2.png" alt="Photo 2">
+          <p class="name-text">Katharina</p>
+          <p class="italic-text">Beautician</p>
+        </a>
+      </div>
+      <div class="image-item">
+        <a :href="'/Alex'">
+          <img src="../assets/photo3.jpg" alt="Photo 3">
+          <p class="name-text">Alex</p>
+          <p class="italic-text">Hairdresser</p>
+        </a>
+      </div>
+      <div class="image-item">
+        <a :href="'/Rose'">
+          <img src="../assets/photo4.png" alt="Photo 4">
+          <p class="name-text">Rose</p>
+          <p class="italic-text">Hairdresser</p>
+        </a>
+      </div>
+      <div class="image-item">
+        <a :href="'/Monique'">
+          <img src="../assets/photo5.jpg" alt="Photo 5">
+          <p class="name-text">Monique</p>
+          <p class="italic-text">Hairdresser & beautician</p>
+        </a>
+      </div>
   </div> 
-
 
   <div class="services-container">
       <h1 class="header">OUR SERVICES</h1>
@@ -86,12 +83,12 @@
 
       <h2 class="ser6">Relaxing back massage</h2>
       <a href="/Massage">
-        <button class="button-container5">Book</button>
+        <button class="button-container6">Book</button>
       </a>
 
       <h2 class="ser7">Lashes extensions</h2>
       <a href="/Lashes">
-        <button class="button-container5">Book</button>
+        <button class="button-container7">Book</button>
       </a>
     </div>
 </template>
@@ -151,7 +148,7 @@ button {
   color: white;
   margin-left: 1050px;
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 10px;
 }
 
@@ -181,6 +178,12 @@ hr {
   margin-bottom: 10px;
 }
 
+.image-container {
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+
 .ser1 {
   color: #000000;
   font-size: 25px;
@@ -191,10 +194,9 @@ hr {
 
 .button-container1 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -45px;    
 }
 
 .ser2 {
@@ -203,15 +205,14 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: -25px;
+  margin-top: -15px;
 }
 
 .button-container2 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -40px;    
 }
 
 .ser3 {
@@ -220,15 +221,14 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .button-container3 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -35px;    
 }
 
 .ser4 {
@@ -237,15 +237,14 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .button-container4 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -30px;    
 }
 
 .ser5 {
@@ -254,15 +253,14 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .button-container5 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -25px;    
 }
 
 .ser6 {
@@ -271,15 +269,14 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .button-container6 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -20px;    
 }
 
 .ser7 {
@@ -288,35 +285,34 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .button-container7 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 450px;
   position: absolute;
-  left: 10px;
-  margin-top: -70px;    
+  margin-top: -20px;    
 }
 
-.image-container { /* Dodane */
+.image-container {
   display: flex;
   justify-content: flex-start;
   gap: 0px;
   margin-right:300px;
 }
 
-.image-container img { /* Dodane */
+.image-container img {
   width: 50%;
 }
 
-.image-item { /* Dodane */
+.image-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.image-item p { /* Dodane */
+.image-item p {
   font-weight: bold;
   color: black;
 }
@@ -335,8 +331,8 @@ hr {
 
 .back-button {
   position: absolute;
-  top: 80px; /* Odległość od góry */
-  right: 365px; /* Odległość od prawej strony */
+  top: 80px;
+  right: 365px;
 }
 
 </style>

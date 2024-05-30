@@ -16,32 +16,51 @@
         <p class="name-text">Katharina</p>
         <p class="italic-text">Beautician</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container1">Book</button><br>
+
+      <a>
+        <button class="button-container1" @click="goToCalendar(stylist1)">Book</button>><br>
       </a>
+
     </div>  
+
     <div class="image-item">
       <a :href="'/Monique'">
         <img src="../assets/photo5.jpg" alt="Photo 5">
         <p class="name-text">Monique</p>
         <p class="italic-text">Hairdresser & beautician</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container4">Book</button><br>
+
+      <a>
+        <button class="button-container2" @click="goToCalendar(stylist2)">Book</button>><br>
       </a>
+
     </div>
   </div> 
+
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
-import { useRouter } from 'vue-router';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
 
+const stylist1 = "Katharina";
+const stylist2 = "Monique";
+
+const localStore = useStore();
 const router = useRouter();
+
+localStore.changeService('Facial for acne-prone skin');
 
 const goHome = () => {
   router.push('book');
 };
+
+function goToCalendar(value) {
+  localStore.changeBeautician(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>

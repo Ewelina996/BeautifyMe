@@ -26,20 +26,38 @@
 
     <div class="booking-containers">
 
-      <h2 class="ser1">Haircut for short hair</h2>
-      <a href="/calendar">
-        <button class="button-container1">Book</button>><br>
-      </a>
+        <h2 class="ser1">{{ service1 }}</h2>
+        <a>
+          <button class="button-container1" @click="goToCalendar(service1)">Book</button>><br>
+        </a>
+  
+        <h2 class="ser2">{{ service2 }}</h2>
+        <a>
+          <button class="button-container2" @click="goToCalendar(service2)">Book</button>><br>
+        </a>
 
-      <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/calendar">
-        <button class="button-container2">Book</button>
-      </a>
     </div>
+    
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
+
+const service1 = 'Haircut for short hair';
+const service2 = 'Haircut for long hair';
+
+const localStore = useStore();
+const router = useRouter();
+
+localStore.changeBeautician('Alex');
+
+function goToCalendar(value) {
+  localStore.changeService(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>
@@ -48,7 +66,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+height: calc(100vh - 60px);
 }
 
 .title {
@@ -149,91 +167,6 @@ left: 10px;
 margin-top: -70px;    
 }
 
-.ser3 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container3 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser4 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container4 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser5 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container5 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser6 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container6 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser7 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container7 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
 .image-container {
 display: flex;
 justify-content: flex-start;
@@ -247,7 +180,7 @@ justify-content: center;
 }
 
 .image {
-width: 100px; /* Adjust as needed */
+width: 100px;
 height: auto;
 margin-left: 80px;
 }
@@ -283,4 +216,5 @@ text-align: left;
 margin-left: 70px;
 margin-top: 5px;
 }
+
 </style>

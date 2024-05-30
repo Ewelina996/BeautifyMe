@@ -1,8 +1,8 @@
 <template>
   <div id="main-page">
     <task-bar></task-bar>
+    <h1 class="title">BeautifyMe</h1>
     <div class="content">
-      <h1 class="title">BeautifyMe</h1>
       <p>
         <button @click="$router.push('/login')">Log in</button>
       </p>
@@ -32,13 +32,7 @@ import TaskBar from './TaskBar.vue';
   font-family: "Hurricane", cursive;
   font-weight: 400;
   font-size: 6em;
-}
-
-.title.hurricane-regular {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: -500px;
+  margin-top: -10px;
 }
 
 .content {
@@ -49,6 +43,13 @@ import TaskBar from './TaskBar.vue';
   margin: 0;
   font-size: 20px;
   margin-top: -500px; 
+}
+
+button {
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 </style>

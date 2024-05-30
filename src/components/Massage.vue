@@ -7,7 +7,7 @@
 
     <button class="back-button" @click="goHome">Back to previous page</button>
 
-    <h1 class="specialists-header">Available specialists for "Relaxin back massage":</h1>
+    <h1 class="specialists-header">Available specialists for "Relaxing back massage":</h1>
     <div class="image-container">
     
       <div class="image-item">
@@ -31,17 +31,31 @@
       </a>
     </div>
   </div> 
+  
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
-import { useRouter } from 'vue-router';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
 
+const stylist1 = "Katharina";
+const stylist2 = "Monique";
+
+const localStore = useStore();
 const router = useRouter();
+
+localStore.changeService('Relaxing back massage');
 
 const goHome = () => {
   router.push('book');
 };
+
+function goToCalendar(value) {
+  localStore.changeBeautician(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>

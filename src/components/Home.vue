@@ -8,8 +8,8 @@
   <body>  
     <h1 class="welcome">Welcome to</h1>
     <h1 class ="bm">BeautifyMe</h1>
-    <a href="/book">
-      <button class="book">See all available services</button><br>
+    <a>
+      <button class="book" @click.prevent="goToServices">See all available services</button><br>
     </a>
     <a href="/mybookings">
       <button class="history">My bookings</button>
@@ -19,6 +19,11 @@
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { useRouter } from 'vue-router/dist/vue-router';
+const router = useRouter();
+function goToServices(value) {
+  router.push({ path: '/book' }); 
+};
 </script>
 
 <style scoped>

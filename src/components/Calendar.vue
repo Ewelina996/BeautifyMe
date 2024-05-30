@@ -7,7 +7,7 @@
     <body>
 
     <div class="services-container">
-      <h1>Your beautician:</h1>
+      <h1>Your beautician: {{  localStore.beautician }}</h1>
 
       <hr class="line"/>
 
@@ -17,15 +17,15 @@
         </a>
       </div>
 
-        <v-container class="calendar">
-          <v-row justify="space-around">
-            <v-date-picker elevation="24"></v-date-picker>
-          </v-row>
-        </v-container>
+      <v-container class="calendar">
+        <v-row justify="space-around">
+          <v-date-picker elevation="24" v-model="date" :disabled-dates="disabledDates"></v-date-picker>
+        </v-row>
+      </v-container>
 
       <v-select :items="items" item-title="hour" label="Choose appointment hour" class="hours">
         <template v-slot:item="{ props, item }">
-          <v-list-item v-bind="props"></v-list-item>
+          <v-list-item v-bind="props" @click="selectHour(item)"></v-list-item>
         </template>
       </v-select>
 
@@ -37,34 +37,41 @@
 
   <script setup>
     import TaskBar from './TaskBar.vue';
-    import { collection, addDoc } from "firebase/firestore"; 
+    import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
     import { db } from '../main.js'
-    import { store } from "../App.vue";
+    import { useStore } from "../store";
+    import { onMounted, ref } from 'vue';
+    import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-    const beautician = store.beautician;
+    const localStore = useStore();
+    const localClient = ref('testClient');
 
-    const sendData = async () => {
-      try {
-      const docRef = await addDoc(collection(db, "appointments"), {
-        beautician: beautician,
-        service: "dupa1",
-        client: "Iksde",
-        date: "Iksde",
-        hour: "Iksde",
+    let auth;
+
+    onMounted(() => {
+      auth = getAuth();
+      onAuthStateChanged(auth,(user) => {
+        if(user) {
+          localStore.changeClient(user.email);
+        }
       });
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
+    });
+
+    function selectHour(time) {
+      localStore.changeHour(time.value);
     }
-    
 
   </script>
 
-  <script>
-
+  <script>  
   export default {
     data: () => ({
+      disabledDates: {dates: [new Date(2024, 4, 15)]},
+      dateTimeSet: [{
+        date: new Date(),
+        hours: ""
+      }],
+      date: new Date(),
       items: [
         {
           hour: '8:00-10:00',
@@ -85,9 +92,59 @@
       ],
       props: { choosenBeautician: String },
     }),
+    mounted(){
+      this.getData()
+    },
+    computed: {
+      choosenDateToString () { 
+        return new Date(this.date).toString()
+      }
+    },
+    methods: {
+      async sendData(){
+        const localStore = useStore();
+        try {
+      console.log(this.choosenDateToString);
+      const docRef = await addDoc(collection(db, "appointments"), {
+        beautician: localStore.beautician,
+        service: localStore.service,
+        client: localStore.client,
+        date: this.choosenDateToString,
+        hour: localStore.hour,
+      });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+      },
+      async getData(){
+        const localStore = useStore();
+        const q = query(collection(db, "appointments"), where("beautician", "==", localStore.beautician));
+        const querySnapshot = await getDocs(q);
+          querySnapshot.forEach((doc) => {
+              this.dateTimeSet.push({
+              date: doc.data().date,
+              hours: doc.data().hour
+             });
+          });
+          this.dateTimeSet.shift();
+          //add 1 if the date exists, initialize as 1 if it does not
+          let hoursSets = this.dateTimeSet.reduce((out, {date}) => ({ ...out, [date]: out[date]+1 || 1}), {});
+          let dateHoursSet = Object.keys(hoursSets).map(key => ({date: new Date(Date.parse(key)), houreSet: hoursSets[key]}));
+
+          console.log(this.disabledDates.dates);
+
+          console.log(dateHoursSet);
+          dateHoursSet.forEach(dateHours => {
+            if(dateHours.houreSet == 5) {
+              this.disabledDates.dates.push(dateHours.date);
+            }});
+
+          console.log(this.disabledDates.dates);
+          
+      }
+    }
   }
-
-
 
   </script>
   
@@ -97,7 +154,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+    height: calc(100vh - 60px);
   }
   
   .title {
@@ -135,7 +192,7 @@
     color: white;
     margin-left: 1050px;
     position: absolute;
-    top: 35px;
+    margin-top: -80px;
     left: 10px;
   }
   
@@ -284,24 +341,24 @@
     margin-top: -70px;    
   }
   
-  .image-container { /* Dodane */
+  .image-container { 
     display: flex;
     justify-content: flex-start;
     gap: 0px;
     margin-right:300px;
   }
   
-  .image-container img { /* Dodane */
+  .image-container img {
     width: 50%;
   }
   
-  .image-item { /* Dodane */
+  .image-item {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .image-item p { /* Dodane */
+  .image-item p { 
     font-weight: bold;
     color: black;
   }
@@ -320,8 +377,8 @@
   
   .back-button {
     position: fixed;
-    top: 80px; /* Odległość od góry */
-    right: 365px; /* Odległość od prawej strony */
+    top: 80px;
+    right: 365px; 
   }
 
   .calendar {
@@ -331,7 +388,7 @@
   .hours {
     width: 50%;
     justify-content: center;
-    margin-left: 400px;
+    margin-left: 350px;
     margin-top: 10px;
   }
   

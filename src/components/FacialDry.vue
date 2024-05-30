@@ -17,26 +17,52 @@
         <p class="name-text">Katharina</p>
         <p class="italic-text">Beautician</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container1">Book</button><br>
+
+      <a>
+        <button class="button-container1" @click="goToCalendar(stylist1)">Book</button>><br>
       </a>
+
     </div>  
+
     <div class="image-item">
       <a :href="'/Monique'">
         <img src="../assets/photo5.jpg" alt="Photo 5">
         <p class="name-text">Monique</p>
         <p class="italic-text">Hairdresser & beautician</p>
       </a>
-      <a :href="'/Calendar'">
-        <button class="button-container4">Book</button><br>
+
+      <a>
+        <button class="button-container2" @click="goToCalendar(stylist2)">Book</button>><br>
       </a>
+
     </div>
   </div> 
   </body>
+
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
+
+const stylist1 = "Katharina";
+const stylist2 = "Monique";
+
+const localStore = useStore();
+const router = useRouter();
+
+localStore.changeService('Facial for dry skin');
+
+const goHome = () => {
+  router.push('book');
+};
+
+function goToCalendar(value) {
+  localStore.changeBeautician(value);
+  router.push({ path: '/calendar' }); 
+};
+
 </script>
 
 <style scoped>
@@ -45,7 +71,7 @@ import TaskBar from './TaskBar.vue';
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+  height: calc(100vh - 60px);
 }
 
 .title {
@@ -147,7 +173,7 @@ hr {
 }
 
 
-.image-container { /* Dodane */
+.image-container { 
   display: flex;
   justify-content: flex-start;
   gap: 0px;
@@ -155,18 +181,18 @@ hr {
   margin-top: 70px;
 }
 
-.image-container img { /* Dodane */
+.image-container img {
   width: 50%;
 }
 
-.image-item { /* Dodane */
+.image-item { 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-.image-item p { /* Dodane */
+.image-item p { 
   font-weight: bold;
   color: black;
 }
@@ -185,8 +211,8 @@ hr {
 
 .back-button {
   position: fixed;
-  top: 80px; /* Odległość od góry */
-  right: 365px; /* Odległość od prawej strony */
+  top: 80px; 
+  right: 365px;
 }
 
 </style>

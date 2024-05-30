@@ -26,52 +26,66 @@
 
     <div class="booking-containers">
 
-      <h2 class="ser1">Haircut for short hair</h2>
-      <a href="/calendar">
-        <button class="button-container1">Book</button>><br>
+      <h2 class="ser1">{{ service1 }}</h2>
+      <a>
+        <button class="button-container1" @click="goToCalendar(service1)">Book</button>><br>
       </a>
 
-      <h2 class="ser2">Haircut for long hair</h2>
-      <a href="/calendar">
-        <button class="button-container2">Book</button>
+      <h2 class="ser2">{{ service2 }}</h2>
+      <a>
+        <button class="button-container2" @click="goToCalendar(service2)">Book</button>
       </a>
 
-      <h2 class="ser3">Hybrid manicure</h2>
-      <a href="/calendar">
-        <button class="button-container3">Book</button>
+      <h2 class="ser3">{{ service3 }}</h2>
+      <a>
+        <button class="button-container3" @click="goToCalendar(service3)">Book</button>
       </a>
 
-      <h2 class="ser4">Facial for acne-prone skin</h2>
-      <a href="/calendar">
-        <button class="button-container4">Book</button>
+      <h2 class="ser4">{{ service4 }}</h2>
+      <a>
+        <button class="button-container4" @click="goToCalendar(service4)">Book</button>
       </a>
 
-      <h2 class="ser5">Facial for dry skin</h2>
-      <a href="/calendar">
-        <button class="button-container5">Book</button>
+      <h2 class="ser5">{{ service5 }}</h2>
+      <a>
+        <button class="button-container5" @click="goToCalendar(service5)">Book</button>
       </a>
 
-      <h2 class="ser6">Relaxing back massage</h2>
-      <a href="/calendar">
-        <button class="button-container5">Book</button>
+      <h2 class="ser6">{{ service6 }}</h2>
+      <a>
+        <button class="button-container5" @click="goToCalendar(service6)">Book</button>
       </a>
 
-      <h2 class="ser7">Lashes extenions</h2>
-      <a href="/calendar">
-        <button class="button-container5">Book</button>
+      <h2 class="ser7">{{service7}}</h2>
+      <a>
+        <button class="button-container5" @click="goToCalendar(service7)">Book</button>
       </a>
     </div>
+    
 </template>
 
 <script setup>
 import TaskBar from './TaskBar.vue';
-import { store } from "../App.vue";
+import { useStore } from "../store";
+import { useRouter } from 'vue-router/dist/vue-router';
 
-console.log(store.beautician)
+const service1 = 'Haircut for short hair';
+const service2 = 'Haircut for long hair';
+const service3 = 'Hybrid manicure';
+const service4 = 'Facial for acne-prone skin';
+const service5 = 'Facial for dry skin';
+const service6 = 'Relaxing back massage';
+const service7 = 'Lashes extenions';
 
-store.changeBeautician("Monique")
+const localStore = useStore();
+const router = useRouter();
 
-console.log(store.beautician)
+localStore.changeBeautician('Monique');
+
+function goToCalendar(value) {
+  localStore.changeService(value);
+  router.push({ path: '/calendar' }); 
+};
 
 </script>
 
@@ -82,7 +96,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+height: calc(100vh - 60px);
 }
 
 .title {
@@ -281,7 +295,7 @@ justify-content: center;
 }
 
 .image {
-width: 100px; /* Adjust as needed */
+width: 100px;
 height: auto;
 margin-left: 80px;
 }
@@ -317,4 +331,5 @@ text-align: left;
 margin-left: 70px;
 margin-top: 5px;
 }
+
 </style>

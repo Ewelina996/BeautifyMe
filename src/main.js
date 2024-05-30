@@ -29,3 +29,4 @@ export const db = getFirestore(initializeApp(firebaseConfig));
 const pinia = createPinia()
 
 createApp(App).use(pinia).use(router).use(vuetify).mount('#app');
+
