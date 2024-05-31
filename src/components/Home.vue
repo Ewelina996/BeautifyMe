@@ -41,7 +41,7 @@ function goToServices(value) {
   color: black;
   width: 400px;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 90px;
 }
 
 .bm {
@@ -50,9 +50,9 @@ function goToServices(value) {
   font-family: "Hurricane";
   font-size: 120px;
   color: black;
-  width: 400px;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 250px;
+  margin-left: -850px;
 }
 
 .book {

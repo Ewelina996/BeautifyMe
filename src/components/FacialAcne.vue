@@ -40,177 +40,174 @@
 </template>
 
 <script setup>
-import TaskBar from './TaskBar.vue';
-import { useStore } from "../store";
-import { useRouter } from 'vue-router/dist/vue-router';
+  import TaskBar from './TaskBar.vue';
+  import { useStore } from "../store";
+  import { useRouter } from 'vue-router/dist/vue-router';
 
-const stylist1 = "Katharina";
-const stylist2 = "Monique";
+  const stylist1 = "Katharina";
+  const stylist2 = "Monique";
 
-const localStore = useStore();
-const router = useRouter();
+  const localStore = useStore();
+  const router = useRouter();
 
-localStore.changeService('Facial for acne-prone skin');
+  localStore.changeService('Facial for acne-prone skin');
 
-const goHome = () => {
-  router.push('book');
-};
+  const goHome = () => {
+    router.push('book');
+  };
 
-function goToCalendar(value) {
-  localStore.changeBeautician(value);
-  router.push({ path: '/calendar' }); 
-};
-
+  function goToCalendar(value) {
+    localStore.changeBeautician(value);
+    router.push({ path: '/calendar' }); 
+  };
 </script>
 
 <style scoped>
-#main-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
-}
+  #main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+  }
 
-.title {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-size: 6em;
-}
+  .title {
+    font-family: "Hurricane", cursive;
+    font-weight: 400;
+    font-size: 6em;
+  }
 
-.title.hurricane-regular {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: -500px;
-}
+  .title.hurricane-regular {
+    font-family: "Hurricane", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -500px;
+  }
 
-.content {
-  margin-top: 60px;
-}
+  .content {
+    margin-top: 60px;
+  }
 
-.logo h1 {
-  margin: 0;
-  font-size: 20px;
-  margin-top: -500px; 
-}
+  .logo h1 {
+    margin: 0;
+    font-size: 20px;
+    margin-top: -500px; 
+  }
 
-button {
-  background-color: #F553B4;
-  color: white;
-  border: none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 18px;
-}
+  button {
+    background-color: #F553B4;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 18px;
+  }
 
-.mybookings {
-  color: white;
-  margin-left: 1050px;
-  position: absolute;
-  top: 0;
-  left: 10px;
-}
+  .mybookings {
+    color: white;
+    margin-left: 1050px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+  }
 
-h1 {
-  color: #000000;
-  font-family: "Josefin Sans";
-  font-size: 30px;
-  margin-top: 100px;
-  text-align: left;
-  margin-left: 80px;
-}
+  h1 {
+    color: #000000;
+    font-family: "Josefin Sans";
+    font-size: 30px;
+    margin-top: 100px;
+    text-align: left;
+    margin-left: 80px;
+  }
 
-hr {
-  display: block;
-  height: 2px;
-  border: 0;
-  border-top: 3px solid #000000;
-  margin: 1em 0;
-  padding: 0;
-  width:90%;
-  margin-left: 70px;
-} 
+  hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 3px solid #000000;
+    margin: 1em 0;
+    padding: 0;
+    width:90%;
+    margin-left: 70px;
+  } 
 
-.services-container { 
-  position: relative;
-  margin-top: -20px;
-  margin-bottom: 10px;
-}
+  .services-container { 
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
 
-.ser1 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-}
+  .ser1 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+  }
 
-.button-container1 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: -690px;
-  margin-top: 0px;    
-}
+  .button-container1 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: -760px;
+    margin-top: 0px;    
+  }
 
-.ser2 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: -25px;
-}
+  .ser2 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: -25px;
+  }
 
-.button-container2 {
-  color: white;
-  margin-left: 1200px;
-  position: absolute;
-  left: -560px;
-  margin-top: 0px;    
-}
+  .button-container2 {
+    color: white;
+    margin-left: 1200px;
+    position: absolute;
+    left: -270px;
+    margin-top: 0px;    
+  }
 
+  .image-container { 
+    display: flex;
+    justify-content: flex-start;
+    gap: 0px;
+    margin-right:300px;
+    margin-top: 70px;
+  }
 
-.image-container { /* Dodane */
-  display: flex;
-  justify-content: flex-start;
-  gap: 0px;
-  margin-right:300px;
-  margin-top: 70px;
-}
+  .image-container img { 
+    width: 50%;
+  }
 
-.image-container img { /* Dodane */
-  width: 50%;
-}
+  .image-item { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-.image-item { /* Dodane */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
+  .image-item p {
+    font-weight: bold;
+    color: black;
+  }
 
-.image-item p { /* Dodane */
-  font-weight: bold;
-  color: black;
-}
+  .italic-text {
+    font-style: italic;
+  }
 
-.italic-text {
-  font-style: italic;
-}
+  .name-text {
+    font-size: 20px;
+  }
 
-.name-text {
-  font-size: 20px;
-}
+  .specialists-header {
+    margin-top: 10px;
+  }
 
-.specialists-header {
-  margin-top: 10px;
-}
-
-.back-button {
-  position: fixed;
-  top: 80px; /* Odległość od góry */
-  right: 365px; /* Odległość od prawej strony */
-}
-
+  .back-button {
+    position: fixed;
+    top: 80px; 
+    right: 365px; 
+  }
 </style>

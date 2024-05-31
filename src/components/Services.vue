@@ -1,21 +1,21 @@
 <template>
-    <div id="about-us">
-      <task-bar></task-bar>
-    </div>
-    <head>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap">
-    </head>
-    <body>  
-      <h1 class="welcome">Welcome to</h1>
-      <h1 class ="bm">BeautifyMe</h1>
-    </body>
-  </template>
+  <div id="about-us">
+    <task-bar></task-bar>
+  </div>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap">
+  </head>
+  <body>  
+    <h1 class="welcome">Welcome to</h1>
+    <h1 class ="bm">BeautifyMe</h1>
+  </body>
+</template>
   
-  <script setup>
+<script setup>
   import TaskBar from './TaskBar.vue';
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   #main-page {
     flex-direction: column;
     align-items: center;
@@ -31,6 +31,5 @@
     margin: auto;
     margin-top: 70px;
   }
-  
-  </style>
+</style>
   

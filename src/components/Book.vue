@@ -94,245 +94,245 @@
 </template>
 
 <script setup>
-import TaskBar from './TaskBar.vue';
-import { useRouter } from 'vue-router';
+  import TaskBar from './TaskBar.vue';
+  import { useRouter } from 'vue-router';
 
-const router = useRouter();
+  const router = useRouter();
 
-const goHome = () => {
-  router.push('home');
-};
+  const goHome = () => {
+    router.push('home');
+  };
 </script>
 
 <style scoped>
-#main-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
-}
+  #main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+  }
 
-.title {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-size: 6em;
-}
+  .title {
+    font-family: "Hurricane", cursive;
+    font-weight: 400;
+    font-size: 6em;
+  }
 
-.title.hurricane-regular {
-  font-family: "Hurricane", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: -500px;
-}
+  .title.hurricane-regular {
+    font-family: "Hurricane", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -500px;
+  }
 
-.content {
-  margin-top: 60px;
-}
+  .content {
+    margin-top: 60px;
+  }
 
-.logo h1 {
-  margin: 0;
-  font-size: 20px;
-  margin-top: -500px; 
-}
+  .logo h1 {
+    margin: 0;
+    font-size: 20px;
+    margin-top: -500px; 
+  }
 
-button {
-  background-color: #F553B4;
-  color: white;
-  border: none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 18px;
-}
+  button {
+    background-color: #F553B4;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 18px;
+  }
 
-.mybookings {
-  color: white;
-  margin-left: 1050px;
-  position: absolute;
-  top: -10px;
-  left: 10px;
-}
+  .mybookings {
+    color: white;
+    margin-left: 1050px;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+  }
 
-h1 {
-  color: #000000;
-  font-family: "Josefin Sans";
-  font-size: 30px;
-  margin-top: 100px;
-  text-align: left;
-  margin-left: 80px;
-}
+  h1 {
+    color: #000000;
+    font-family: "Josefin Sans";
+    font-size: 30px;
+    margin-top: 100px;
+    text-align: left;
+    margin-left: 80px;
+  }
 
-hr {
-  display: block;
-  height: 2px;
-  border: 0;
-  border-top: 3px solid #000000;
-  margin: 1em 0;
-  padding: 0;
-  width:90%;
-  margin-left: 70px;
-} 
+  hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 3px solid #000000;
+    margin: 1em 0;
+    padding: 0;
+    width:90%;
+    margin-left: 70px;
+  } 
 
-.services-container { 
-  position: relative;
-  margin-top: -20px;
-  margin-bottom: 10px;
-}
+  .services-container { 
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
 
-.image-container {
-  margin-top: 30px;
-  margin-left: 25px;
-}
+  .image-container {
+    margin-top: 30px;
+    margin-left: 25px;
+  }
 
 
-.ser1 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-}
+  .ser1 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+  }
 
-.button-container1 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -45px;    
-}
+  .button-container1 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -45px;    
+  }
 
-.ser2 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: -15px;
-}
+  .ser2 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: -15px;
+  }
 
-.button-container2 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -40px;    
-}
+  .button-container2 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -40px;    
+  }
 
-.ser3 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 10px;
-}
+  .ser3 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 10px;
+  }
 
-.button-container3 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -35px;    
-}
+  .button-container3 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -35px;    
+  }
 
-.ser4 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 10px;
-}
+  .ser4 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 10px;
+  }
 
-.button-container4 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -30px;    
-}
+  .button-container4 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -30px;    
+  }
 
-.ser5 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 10px;
-}
+  .ser5 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 10px;
+  }
 
-.button-container5 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -25px;    
-}
+  .button-container5 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -25px;    
+  }
 
-.ser6 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 10px;
-}
+  .ser6 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 10px;
+  }
 
-.button-container6 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -20px;    
-}
+  .button-container6 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -20px;    
+  }
 
-.ser7 {
-  color: #000000;
-  font-size: 25px;
-  font-family: "Josefin Sans";
-  text-align: left;
-  margin-left: 70px;
-  margin-top: 10px;
-}
+  .ser7 {
+    color: #000000;
+    font-size: 25px;
+    font-family: "Josefin Sans";
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 10px;
+  }
 
-.button-container7 {
-  color: white;
-  margin-left: 450px;
-  position: absolute;
-  margin-top: -20px;    
-}
+  .button-container7 {
+    color: white;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -20px;    
+  }
 
-.image-container {
-  display: flex;
-  justify-content: flex-start;
-  gap: 0px;
-  margin-right:300px;
-}
+  .image-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0px;
+    margin-right:300px;
+  }
 
-.image-container img {
-  width: 50%;
-}
+  .image-container img {
+    width: 50%;
+  }
 
-.image-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.image-item p {
-  font-weight: bold;
-  color: black;
-}
+  .image-item p {
+    font-weight: bold;
+    color: black;
+  }
 
-.italic-text {
-  font-style: italic;
-}
+  .italic-text {
+    font-style: italic;
+  }
 
-.name-text {
-  font-size: 20px;
-}
+  .name-text {
+    font-size: 20px;
+  }
 
-.specialists-header {
-  margin-top: 10px;
-}
+  .specialists-header {
+    margin-top: 10px;
+  }
 
-.back-button {
-  position: absolute;
-  top: 80px;
-  right: 365px;
-}
+  .back-button {
+    position: absolute;
+    top: 80px;
+    right: 365px;
+  }
 
 </style>
