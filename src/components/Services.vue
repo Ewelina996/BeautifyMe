@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+    height: calc(100vh - 60px);
   }
   .welcome {
     text-align: center;

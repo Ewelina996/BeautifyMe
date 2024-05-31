@@ -4,7 +4,7 @@
     <div class="content">        
     </div>
   </div>  
-  <h1 class="specialist-header">Our specialists:</h1>
+  <h1 class="specialist-header">Specialist:</h1>
   <div class="image-container">
   <div class="image-item">
     <img class="image" src="../assets/photo4.png" alt="Photo 4">
@@ -62,140 +62,142 @@ function goToCalendar(value) {
 
 <style scoped>
 #main-page {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px); 
 }
 
 .title {
-font-family: "Hurricane", cursive;
-font-weight: 400;
-font-size: 6em;
+  font-family: "Hurricane", cursive;
+  font-weight: 400;
+  font-size: 6em;
 }
 
 .title.hurricane-regular {
-font-family: "Hurricane", cursive;
-font-weight: 400;
-font-style: normal;
-margin-top: -500px;
+  font-family: "Hurricane", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -500px;
 }
 
 .content {
-margin-top: 60px;
+  margin-top: 60px;
 }
 
 .logo h1 {
-margin: 0;
-font-size: 20px;
-margin-top: -500px; 
+  margin: 0;
+  font-size: 20px;
+  margin-top: -500px; 
 }
 
 button {
-background-color: #F553B4;
-color: white;
-border: none;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-border-radius: 18px;
+  background-color: #F553B4;
+  color: white;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 18px;
 }
 
 .history {
-color: white;
-margin-left: 1050px;
-position: absolute;
-top: 0;
-left: 10px;
+  color: white;
+  margin-left: 1050px;
+  position: absolute;
+  top: 0;
+  left: 10px;
 }
 
 h1 {
-color: #000000;
-font-family: "Josefin Sans";
-font-size: 30px;
-margin-top: 100px;
-text-align: left;
-margin-left: 80px;
+  color: #000000;
+  font-family: "Josefin Sans";
+  font-size: 30px;
+  margin-top: 100px;
+  text-align: left;
+  margin-left: 80px;
 }
 
 hr {
-display: block;
-height: 2px;
-border: 0;
-border-top: 3px solid #000000;
-margin: 1em 0;
-padding: 0;
-width:90%;
-margin-left: 70px;
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 3px solid #000000;
+  margin: 1em 0;
+  padding: 0;
+  width:90%;
+  margin-left: 70px;
 } 
 
 .services-container { 
-position: relative;
-margin-top: -20px;
-margin-bottom: 10px;
+  position: relative;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 .ser1 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
+  color: #000000;
+  font-size: 25px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 70px;
 }
 
 .button-container1 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
+  color: white;
+  margin-left: 1420px;
+  position: absolute;
+  left: 10px;
+  margin-top: -50px;    
 }
 
 .ser2 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: -25px;
+  color: #000000;
+  font-size: 25px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 70px;
+  margin-top: -15px;
 }
 
 .button-container2 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
+  color: white;
+  margin-left: 1420px;
+  position: absolute;
+  left: 10px;
+  margin-top: -45px;      
 }
 
 .image-container {
-display: flex;
-justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
 }
 
 .image-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
 }
 
 .image {
-width: 100px;
-height: auto;
-margin-left: 80px;
+  width: 100px; 
+  height: auto;
+  margin-left: 80px;
 }
 .centered-text {
-text-align: center;
-margin-left: 0;
+  text-align: center;
+  margin-left: 0;
 }
 
 .service-header {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-font-weight: bold;
+  color: #000000;
+  font-size: 25px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 70px;
+  font-weight: bold;
 }
 
 .italic-text {
@@ -210,11 +212,11 @@ font-weight: bold;
 }
 
 .specialist-header {
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
+  font-size: 25px;
+  font-family: "Josefin Sans";
+  text-align: left;
+  margin-left: 130px;
+  margin-top: 5px;
 }
 
 </style>

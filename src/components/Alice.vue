@@ -4,7 +4,7 @@
       <div class="content">        
       </div>
     </div>  
-    <h1 class="specialist-header">Our specialists:</h1>
+    <h1 class="specialist-header">Specialist:</h1>
     <div class="image-container">
     <div class="image-item">
       <img class="image" src="../assets/photo1.jpg" alt="Photo 1">
@@ -144,10 +144,10 @@ hr {
 
 .button-container1 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 1420px;
   position: absolute;
   left: 10px;
-  margin-top: -70px;    
+  margin-top: -50px;    
 }
 
 .ser2 {
@@ -156,20 +156,21 @@ hr {
   font-family: "Josefin Sans";
   text-align: left;
   margin-left: 70px;
-  margin-top: -25px;
+  margin-top: -15px;
 }
 
 .button-container2 {
   color: white;
-  margin-left: 1200px;
+  margin-left: 1420px;
   position: absolute;
   left: 10px;
-  margin-top: -70px;    
+  margin-top: -45px;      
 }
 
 .image-container {
   display: flex;
   justify-content: flex-start;
+  margin-top: 20px;
 }
 
 .image-item {
@@ -177,6 +178,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 60px;
 }
 
 .image {
@@ -213,7 +215,7 @@ hr {
   font-size: 25px;
   font-family: "Josefin Sans";
   text-align: left;
-  margin-left: 70px;
+  margin-left: 130px;
   margin-top: 5px;
 }
 

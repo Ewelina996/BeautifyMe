@@ -4,7 +4,7 @@
     <div class="content">        
     </div>
   </div>  
-  <h1 class="specialist-header">Our specialists:</h1>
+  <h1 class="specialist-header">Specialist:</h1>
   <div class="image-container">
   <div class="image-item">
     <img class="image" src="../assets/photo5.jpg" alt="Photo 5">
@@ -41,24 +41,24 @@
         <button class="button-container3" @click="goToCalendar(service3)">Book</button>
       </a>
 
-      <h2 class="ser4">{{ service4 }}</h2>
+      <h2 class="ser3">{{ service4 }}</h2>
       <a>
-        <button class="button-container4" @click="goToCalendar(service4)">Book</button>
+        <button class="button-container3" @click="goToCalendar(service4)">Book</button>
       </a>
 
-      <h2 class="ser5">{{ service5 }}</h2>
+      <h2 class="ser3">{{ service5 }}</h2>
       <a>
-        <button class="button-container5" @click="goToCalendar(service5)">Book</button>
+        <button class="button-container3" @click="goToCalendar(service5)">Book</button>
       </a>
 
-      <h2 class="ser6">{{ service6 }}</h2>
+      <h2 class="ser3">{{ service6 }}</h2>
       <a>
-        <button class="button-container5" @click="goToCalendar(service6)">Book</button>
+        <button class="button-container3" @click="goToCalendar(service6)">Book</button>
       </a>
 
-      <h2 class="ser7">{{service7}}</h2>
+      <h2 class="ser3">{{service7}}</h2>
       <a>
-        <button class="button-container5" @click="goToCalendar(service7)">Book</button>
+        <button class="button-container3" @click="goToCalendar(service7)">Book</button>
       </a>
     </div>
     
@@ -134,7 +134,7 @@ border-radius: 18px;
 color: white;
 margin-left: 1050px;
 position: absolute;
-top: 0;
+margin-top: -40px;
 left: 10px;
 }
 
@@ -174,10 +174,10 @@ margin-left: 70px;
 
 .button-container1 {
 color: white;
-margin-left: 1200px;
+margin-left: 1420px;
 position: absolute;
 left: 10px;
-margin-top: -70px;    
+margin-top: -50px;    
 }
 
 .ser2 {
@@ -186,15 +186,15 @@ font-size: 25px;
 font-family: "Josefin Sans";
 text-align: left;
 margin-left: 70px;
-margin-top: -25px;
+margin-top: -15px;
 }
 
 .button-container2 {
 color: white;
-margin-left: 1200px;
+margin-left: 1420px;
 position: absolute;
 left: 10px;
-margin-top: -70px;    
+margin-top: -45px;   
 }
 
 .ser3 {
@@ -203,88 +203,21 @@ font-size: 25px;
 font-family: "Josefin Sans";
 text-align: left;
 margin-left: 70px;
-margin-top: 5px;
+margin-top: 15px;
 }
 
 .button-container3 {
 color: white;
-margin-left: 1200px;
+margin-left: 1420px;
 position: absolute;
 left: 10px;
-margin-top: -70px;    
-}
-
-.ser4 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container4 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser5 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container5 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser6 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container6 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
-}
-
-.ser7 {
-color: #000000;
-font-size: 25px;
-font-family: "Josefin Sans";
-text-align: left;
-margin-left: 70px;
-margin-top: 5px;
-}
-
-.button-container7 {
-color: white;
-margin-left: 1200px;
-position: absolute;
-left: 10px;
-margin-top: -70px;    
+margin-top: -45px;     
 }
 
 .image-container {
 display: flex;
 justify-content: flex-start;
+margin-top: 20px;
 }
 
 .image-item {
@@ -328,7 +261,7 @@ font-weight: bold;
 font-size: 25px;
 font-family: "Josefin Sans";
 text-align: left;
-margin-left: 70px;
+margin-left: 130px;
 margin-top: 5px;
 }
 

@@ -19,10 +19,9 @@
 
       <v-container class="calendar">
         <v-row justify="space-around">
-          <v-date-picker elevation="24" v-model="date" :disabled-dates="disabledDates"></v-date-picker>
+          <v-date-picker v-model="date" :allowed-dates="allowedDates"></v-date-picker>
         </v-row>
       </v-container>
-
       <v-select :items="items" item-title="hour" label="Choose appointment hour" class="hours">
         <template v-slot:item="{ props, item }">
           <v-list-item v-bind="props" @click="selectHour(item)"></v-list-item>
@@ -40,11 +39,10 @@
     import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
     import { db } from '../main.js'
     import { useStore } from "../store";
-    import { onMounted, ref } from 'vue';
+    import { onMounted } from 'vue';
     import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
     const localStore = useStore();
-    const localClient = ref('testClient');
 
     let auth;
 
@@ -66,13 +64,14 @@
   <script>  
   export default {
     data: () => ({
-      disabledDates: {dates: [new Date(2024, 4, 15)]},
+      disabledDates: {dates: [new Date()]},
       dateTimeSet: [{
         date: new Date(),
         hours: ""
       }],
       date: new Date(),
-      items: [
+      items: [],
+      startItems: [
         {
           hour: '8:00-10:00',
         },
@@ -93,7 +92,8 @@
       props: { choosenBeautician: String },
     }),
     mounted(){
-      this.getData()
+      this.items = this.startItems;
+      this.getData();
     },
     computed: {
       choosenDateToString () { 
@@ -104,14 +104,13 @@
       async sendData(){
         const localStore = useStore();
         try {
-      console.log(this.choosenDateToString);
-      const docRef = await addDoc(collection(db, "appointments"), {
-        beautician: localStore.beautician,
-        service: localStore.service,
-        client: localStore.client,
-        date: this.choosenDateToString,
-        hour: localStore.hour,
-      });
+        const docRef = await addDoc(collection(db, "appointments"), {
+          beautician: localStore.beautician,
+          service: localStore.service,
+          client: localStore.client,
+          date: this.choosenDateToString,
+          hour: localStore.hour,
+        })
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
@@ -128,24 +127,35 @@
              });
           });
           this.dateTimeSet.shift();
+          this.disabledDates.dates.shift();
           //add 1 if the date exists, initialize as 1 if it does not
           let hoursSets = this.dateTimeSet.reduce((out, {date}) => ({ ...out, [date]: out[date]+1 || 1}), {});
           let dateHoursSet = Object.keys(hoursSets).map(key => ({date: new Date(Date.parse(key)), houreSet: hoursSets[key]}));
 
-          console.log(this.disabledDates.dates);
-
-          console.log(dateHoursSet);
           dateHoursSet.forEach(dateHours => {
             if(dateHours.houreSet == 5) {
               this.disabledDates.dates.push(dateHours.date);
-            }});
-
-          console.log(this.disabledDates.dates);
-          
-      }
-    }
+              return true;
+            }});          
+      },
+      allowedDates(value) {
+      const day =  new Date(Date.parse(value)).getDate();
+      if(this.disabledDates.dates.length == 0) return true;
+      return this.disabledDates.dates.some(date => date.getDate() !== day);
+      },
+   }, 
+   watch: {
+    date: function(newValue, oldValue) {
+        this.items = this.startItems;
+        this.dateTimeSet.forEach( setMember => {
+          if(setMember.date == newValue){
+            this.items = this.items.filter(obj => obj.hour != setMember.hours)
+          }
+        });
+        }
+    },
+   
   }
-
   </script>
   
   <style scoped>
