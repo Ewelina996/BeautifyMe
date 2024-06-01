@@ -11,19 +11,27 @@
     <a>
       <button class="book" @click.prevent="goToServices">See all available services</button><br>
     </a>
-    <a href="/mybookings">
-      <button class="history">My bookings</button>
+    <a>
+      <button class="history" @click.prevent="goToBookings">My bookings</button>
     </a>
   </body>
 </template>
 
 <script setup>
-import TaskBar from './TaskBar.vue';
-import { useRouter } from 'vue-router/dist/vue-router';
-const router = useRouter();
-function goToServices(value) {
-  router.push({ path: '/book' }); 
-};
+  import TaskBar from './TaskBar.vue';
+  import { useRouter } from 'vue-router/dist/vue-router';
+  import { useStore } from "../store";
+
+  const router = useRouter();
+  const localStore = useStore();
+
+  function goToServices(value) {
+    router.push({ path: '/book' }); 
+  };
+
+  function goToBookings (value) {
+      router.push({ path: '/mybookings' });
+  };
 </script>
 
 <style scoped>

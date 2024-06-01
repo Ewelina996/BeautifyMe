@@ -56,10 +56,6 @@
     router.push('book');
   };
 
-  function goToCalendar(value) {
-    localStore.changeBeautician(value);
-    router.push({ path: '/calendar' }); 
-  };
 </script>
 
 <style scoped>

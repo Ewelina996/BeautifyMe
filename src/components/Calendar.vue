@@ -116,7 +116,7 @@
         console.error("Error adding document: ", e);
       }
       },
-      async getData(){
+      async getData() {
         const localStore = useStore();
         const q = query(collection(db, "appointments"), where("beautician", "==", localStore.beautician));
         const querySnapshot = await getDocs(q);
@@ -158,7 +158,7 @@
   }
   </script>
   
-  <style scoped>
+<style scoped>
   #main-page {
     display: flex;
     flex-direction: column;
@@ -402,5 +402,5 @@
     margin-top: 10px;
   }
   
-  </style>
+</style>
   
