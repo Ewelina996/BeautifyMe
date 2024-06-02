@@ -115,12 +115,6 @@
     margin-top: 80px;
   }
 
-  .logo h1 {
-    margin: 0;
-    font-size: 20px;
-    margin-top: -500px; 
-  }
-
   button {
     background-color: #F553B4;
     color: white;
@@ -146,51 +140,23 @@
     margin-left: 80px;
   }
 
-  hr {
-    display: block;
-    height: 2px;
-    border: 0;
-    border-top: 3px solid #000000;
-    margin: 1em 0;
-    padding: 0;
-    width:90%;
-    margin-left: 70px;
-  } 
-
   .services-container { 
     position: relative;
     margin-top: -20px;
     margin-bottom: 10px;
   }
 
-  .ser1 {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-  }
-
   .button-container1 {
     color: white;
-    margin-left: 1200px;
+    margin-left: 1550px;
     position: absolute;
     left: -880px;
     margin-top: 0px;    
   }
 
-  .ser2 {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: -25px;
-  }
-
   .button-container2 {
     color: white;
-    margin-left: 1200px;
+    margin-left: 1050px;
     position: absolute;
     left: -635px;
     margin-top: 0px;    
@@ -198,7 +164,7 @@
 
   .button-container3 {
     color: white;
-    margin-left: 1200px;
+    margin-left: 1310px;
     position: absolute;
     left: -390px;
     margin-top: 0px;    
@@ -206,7 +172,7 @@
 
   .button-container4 {
     color: white;
-    margin-left: 1200px;
+    margin-left: 1300px;
     position: absolute;
     left: -140px;
     margin-top: 0px;    

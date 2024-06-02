@@ -59,6 +59,11 @@
       localStore.changeHour(time.value);
     }
 
+    const goHome = () => {
+      //async? router nie zadziala podczas renderowania
+      router.push('home');
+    };
+
   </script>
 
   <script>  
@@ -128,7 +133,6 @@
           });
           this.dateTimeSet.shift();
           this.disabledDates.dates.shift();
-          //add 1 if the date exists, initialize as 1 if it does not
           let hoursSets = this.dateTimeSet.reduce((out, {date}) => ({ ...out, [date]: out[date]+1 || 1}), {});
           let dateHoursSet = Object.keys(hoursSets).map(key => ({date: new Date(Date.parse(key)), houreSet: hoursSets[key]}));
 
@@ -400,6 +404,10 @@
     justify-content: center;
     margin-left: 350px;
     margin-top: 10px;
+  }
+
+  .bookButton {
+    margin-left: 50px;
   }
   
 </style>

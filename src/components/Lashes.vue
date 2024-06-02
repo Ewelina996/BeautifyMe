@@ -71,12 +71,6 @@
     margin-top: 60px;
   }
 
-  .logo h1 {
-    margin: 0;
-    font-size: 20px;
-    margin-top: -500px; 
-  }
-
   button {
     background-color: #F553B4;
     color: white;
@@ -93,60 +87,23 @@
     left: 10px;
   }
 
-  h1 {
-    color: #000000;
-    font-family: "Josefin Sans";
-    font-size: 30px;
-    margin-top: 100px;
-    text-align: left;
-    margin-left: 80px;
-  }
-
-  hr {
-    display: block;
-    height: 2px;
-    border: 0;
-    border-top: 3px solid #000000;
-    margin: 1em 0;
-    padding: 0;
-    width:90%;
-    margin-left: 70px;
-  } 
-
   .services-container { 
     position: relative;
     margin-top: -20px;
     margin-bottom: 10px;
   }
 
-  .ser1 {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-  }
-
   .button-container1 {
     color: white;
-    margin-left: 1200px;
+    margin-left: 1300px;
     position: absolute;
     left: -760px;
     margin-top: 0px;    
   }
 
-  .ser2 {
-    color: #000000;
-    font-size: 25px;
-    font-family: "Josefin Sans";
-    text-align: left;
-    margin-left: 70px;
-    margin-top: -25px;
-  }
-
   .button-container2 {
     color: white;
-    margin-left: 1200px;
+    margin-left: 1300px;
     position: absolute;
     left: -270px;
     margin-top: 0px;    
@@ -185,7 +142,12 @@
   }
 
   .specialists-header {
-    margin-top: 10px;
+    color: #000000;
+    font-family: "Josefin Sans";
+    font-size: 30px;
+    margin-top: 100px;
+    text-align: left;
+    margin-left: 80px;
   }
 
   .back-button {

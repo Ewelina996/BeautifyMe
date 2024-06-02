@@ -16,7 +16,7 @@
       Beautician: {{  item.beautician  }}
     </li>
     <body>
-      <button class="book" @click="goHome">New booking</button><br>
+      <button class="book" @click="goToBooking">New booking</button><br>
     </body>
 </template>
   
@@ -32,7 +32,7 @@
   const router = useRouter();
   const localStore = useStore();
 
-  const goHome = () => {
+  const goToBooking = () => {
     router.push('book');
   };
 
@@ -40,38 +40,38 @@
 
 <script>
 
-export default {
-    data: () => ({
-      bookingArray: [{
-        date: "",
-        hour: "",
-        service: "",
-        beautician: ""
-      }        
-      ]
-    }),
-    mounted(){
-      this.getData();
-    },
-    methods:{
-      async getData() {
-        let auth = getAuth();
-        onAuthStateChanged(auth,(user) => {
-          if(user) {
-            localStore.changeClient(user.email);
-          }
-        });
-        const localStore = useStore();
-        const q = query(collection(db, "appointments"), where("client", "==", localStore.client));
-        const querySnapshot = await getDocs(q);
-        this.bookingArray.shift();
-        querySnapshot.forEach((doc) => {
-                let docData = doc.data();
-                this.bookingArray.push({date: docData.date, hour: docData.hour, service: docData.service, beautician: docData.beautician})
-              });
+  export default {
+      data: () => ({
+        bookingArray: [{
+          date: "",
+          hour: "",
+          service: "",
+          beautician: ""
+        }        
+        ]
+      }),
+      mounted(){
+        this.getData();
+      },
+      methods:{
+        async getData() {
+          let auth = getAuth();
+          onAuthStateChanged(auth,(user) => {
+            if(user) {
+              localStore.changeClient(user.email);
+            }
+          });
+          const localStore = useStore();
+          const q = query(collection(db, "appointments"), where("client", "==", localStore.client));
+          const querySnapshot = await getDocs(q);
+          this.bookingArray.shift();
+          querySnapshot.forEach((doc) => {
+                  let docData = doc.data();
+                  this.bookingArray.push({date: docData.date, hour: docData.hour, service: docData.service, beautician: docData.beautician})
+                });
+        }
       }
-    }
-}
+  }
 </script>
   
 <style scoped>
