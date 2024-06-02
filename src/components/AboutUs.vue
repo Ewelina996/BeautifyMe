@@ -65,16 +65,16 @@ import TaskBar from './TaskBar.vue';
   color: black;
   font-family: "Josefin Sans";
   text-align: left;
-  margin-top: 80px;
-  margin-left: 450px;
+  margin-top: 110px;
+  margin-left: 480px;
 }
 
 .second_par {
   font-size: 25px;
   color: black;
   font-family: "Josefin Sans";
-  margin-top: 30px;
-  margin-left: 450px;
+  margin-top: 50px;
+  margin-left: 480px;
   text-align: left;
 }
 
@@ -82,7 +82,7 @@ import TaskBar from './TaskBar.vue';
   font-size: 25px;
   color: black;
   font-family: "Josefin Sans";
-  margin-top: 50px;
+  margin-top: 60px;
   text-align: center;
   margin-left: 30px;
   margin-right: 30px;

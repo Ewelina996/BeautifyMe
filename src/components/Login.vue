@@ -35,42 +35,43 @@
   import { ref } from "vue";
   import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
   import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+  import { useStore } from "../store";
   import TaskBar from './TaskBar.vue';
   import router from "../router";
   
   let email = ref("");
   let password = ref("");
 
-const login = async () => {
-  console.log(`Logging in with email ${email.value} and password ${password.value}`);
+  const localStore = useStore();
 
-  try {
-    await signInWithEmailAndPassword(getAuth(), email.value, password.value);
-    console.log("Successfully signed in");
-    router.push('/home');
-  } catch (error) {
-    console.log(error.code);
-    alert(error.message);
-  }
-};
+  const login = async () => {
+    console.log(`Logging in with email ${email.value} and password ${password.value}`);
 
-const loginGoogle = async () => {
-  console.log(`Logging in with Google account email ${email.value}`);
- 
+    try {
+      await signInWithEmailAndPassword(getAuth(), email.value, password.value);
+      console.log("Successfully signed in");
+      localStore.changeClient(email.value);
+      router.push({path:'/home'});
+    } catch (error) {
+      console.log(error.code);
+      alert(error.message);
+    }
+  };
+
+  const loginGoogle = async () => {
+    console.log(`Logging in with Google account email ${email.value}`);
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup (getAuth(), provider);
+      console.log("Successfully signed in");
+      router.push({path:'/home'});
+    } catch (error) {
+      console.log(error.code);
+      alert(error.message);
+    }
+  };
+
   const provider = new GoogleAuthProvider();
-  try {
-    await signInWithPopup (getAuth(), provider);
-    console.log("Successfully signed in");
-    router.push('/home');
-  } catch (error) {
-    console.log(error.code);
-    alert(error.message);
-  }
-
-}
-
-const provider = new GoogleAuthProvider();
-
 
 </script>
 

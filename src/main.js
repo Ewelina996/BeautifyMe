@@ -7,6 +7,8 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import { getFirestore } from "firebase/firestore";
+import { createPinia } from 'pinia'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDP9XYpdCbweOji1W2gJVMCfiUwsJTkWiE",
@@ -22,6 +24,9 @@ const vuetify = createVuetify({
   directives,
 })
 
-initializeApp(firebaseConfig);
+export const db = getFirestore(initializeApp(firebaseConfig));
 
-createApp(App).use(router).use(vuetify).mount('#app')
+const pinia = createPinia()
+
+createApp(App).use(pinia).use(router).use(vuetify).mount('#app');
+

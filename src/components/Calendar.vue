@@ -7,7 +7,7 @@
     <body>
 
     <div class="services-container">
-      <h1>Your stylist:</h1>
+      <h1>Your beautician: {{  localStore.beautician }}</h1>
 
       <hr class="line"/>
 
@@ -17,17 +17,18 @@
         </a>
       </div>
 
-        <v-container class="calendar">
-          <v-row justify="space-around">
-            <v-date-picker elevation="24"></v-date-picker>
-          </v-row>
-        </v-container>
-
-      <v-select :items="items" item-title="name" label="User" class="test">
+      <v-container class="calendar">
+        <v-row justify="space-around">
+          <v-date-picker v-model="date" :allowed-dates="allowedDates"></v-date-picker>
+        </v-row>
+      </v-container>
+      <v-select :items="items" item-title="hour" label="Choose appointment hour" class="hours">
         <template v-slot:item="{ props, item }">
-          <v-list-item v-bind="props" :subtitle="item.raw.department"></v-list-item>
+          <v-list-item v-bind="props" @click="selectHour(item)"></v-list-item>
         </template>
       </v-select>
+
+      <button @click="sendData" class="bookButton">BOOK YOUR APPOINTMENT</button>
         
     </div>   
     </body>
@@ -35,53 +36,139 @@
 
   <script setup>
     import TaskBar from './TaskBar.vue';
+    import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; 
+    import { db } from '../main.js'
+    import { useStore } from "../store";
+    import { onMounted } from 'vue';
+    import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
+    const localStore = useStore();
+
+    let auth;
+
+    onMounted(() => {
+      auth = getAuth();
+      onAuthStateChanged(auth,(user) => {
+        if(user) {
+          localStore.changeClient(user.email);
+        }
+      });
+    });
+
+    function selectHour(time) {
+      localStore.changeHour(time.value);
+    }
+
+    const goHome = () => {
+      //async? router nie zadziala podczas renderowania
+      router.push('home');
+    };
+
   </script>
 
-  <script>
-
+  <script>  
   export default {
     data: () => ({
-      items: [
+      disabledDates: {dates: [new Date()]},
+      dateTimeSet: [{
+        date: new Date(),
+        hours: ""
+      }],
+      date: new Date(),
+      items: [],
+      startItems: [
         {
-          name: 'John',
-          department: 'Marketing',
+          hour: '8:00-10:00',
         },
         {
-          name: 'Jane',
-          department: 'Engineering',
+          hour: '10:00-12:00',
         },
         {
-          name: 'Joe',
-          department: 'Sales',
+          hour: '12:00-14:00',
         },
         {
-          name: 'Janet',
-          department: 'Engineering',
+          hour: '14:00-16:00',
         },
         {
-          name: 'Jake',
-          department: 'Marketing',
+          hour: '16:00-18:00',
         },
-        {
-          name: 'Jack',
-          department: 'Sales',
-        },
-        {
-          stylist: 'Anna',
-        },
-      ],
-    }),
-  }
 
+      ],
+      props: { choosenBeautician: String },
+    }),
+    mounted(){
+      this.items = this.startItems;
+      this.getData();
+    },
+    computed: {
+      choosenDateToString () { 
+        return new Date(this.date).toString()
+      }
+    },
+    methods: {
+      async sendData(){
+        const localStore = useStore();
+        try {
+        const docRef = await addDoc(collection(db, "appointments"), {
+          beautician: localStore.beautician,
+          service: localStore.service,
+          client: localStore.client,
+          date: this.choosenDateToString,
+          hour: localStore.hour,
+        })
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+      },
+      async getData() {
+        const localStore = useStore();
+        const q = query(collection(db, "appointments"), where("beautician", "==", localStore.beautician));
+        const querySnapshot = await getDocs(q);
+          querySnapshot.forEach((doc) => {
+              this.dateTimeSet.push({
+              date: doc.data().date,
+              hours: doc.data().hour
+             });
+          });
+          this.dateTimeSet.shift();
+          this.disabledDates.dates.shift();
+          let hoursSets = this.dateTimeSet.reduce((out, {date}) => ({ ...out, [date]: out[date]+1 || 1}), {});
+          let dateHoursSet = Object.keys(hoursSets).map(key => ({date: new Date(Date.parse(key)), houreSet: hoursSets[key]}));
+
+          dateHoursSet.forEach(dateHours => {
+            if(dateHours.houreSet == 5) {
+              this.disabledDates.dates.push(dateHours.date);
+              return true;
+            }});          
+      },
+      allowedDates(value) {
+      const day =  new Date(Date.parse(value)).getDate();
+      if(this.disabledDates.dates.length == 0) return true;
+      return this.disabledDates.dates.some(date => date.getDate() !== day);
+      },
+   }, 
+   watch: {
+    date: function(newValue, oldValue) {
+        this.items = this.startItems;
+        this.dateTimeSet.forEach( setMember => {
+          if(setMember.date == newValue){
+            this.items = this.items.filter(obj => obj.hour != setMember.hours)
+          }
+        });
+        }
+    },
+   
+  }
   </script>
   
-  <style scoped>
+<style scoped>
   #main-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px); /* Wysokość na całą wysokość widoku minus wysokość paska zadań */
+    height: calc(100vh - 60px);
   }
   
   .title {
@@ -119,7 +206,7 @@
     color: white;
     margin-left: 1050px;
     position: absolute;
-    top: 35px;
+    margin-top: -80px;
     left: 10px;
   }
   
@@ -268,24 +355,24 @@
     margin-top: -70px;    
   }
   
-  .image-container { /* Dodane */
+  .image-container { 
     display: flex;
     justify-content: flex-start;
     gap: 0px;
     margin-right:300px;
   }
   
-  .image-container img { /* Dodane */
+  .image-container img {
     width: 50%;
   }
   
-  .image-item { /* Dodane */
+  .image-item {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .image-item p { /* Dodane */
+  .image-item p { 
     font-weight: bold;
     color: black;
   }
@@ -304,19 +391,24 @@
   
   .back-button {
     position: fixed;
-    top: 80px; /* Odległość od góry */
-    right: 365px; /* Odległość od prawej strony */
+    top: 80px;
+    right: 365px; 
   }
 
   .calendar {
     margin-left: 40px;
   }
 
-  .test {
+  .hours {
     width: 50%;
     justify-content: center;
-    margin-left: 400px;
+    margin-left: 350px;
+    margin-top: 10px;
+  }
+
+  .bookButton {
+    margin-left: 50px;
   }
   
-  </style>
+</style>
   
